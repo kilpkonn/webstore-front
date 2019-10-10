@@ -6,6 +6,7 @@ import {
   MatIconModule,
   MatListModule,
   MatGridListModule,
+  MatCardModule,
 } from '@angular/material';
 
 
@@ -17,12 +18,14 @@ import {
     MatIconModule,
     MatListModule,
     MatGridListModule,
+    MatCardModule,
   ],
   exports: [
     MatToolbarModule,
     MatIconModule,
     MatListModule,
     MatGridListModule,
+    MatCardModule,
   ]
 })
 export class AppMaterialModule { }
