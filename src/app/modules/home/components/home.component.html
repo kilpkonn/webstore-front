@@ -1,10 +1,11 @@
-<div fxFlex="90" fxLayout="row" fxLayoutAlign="center">
-  <div fxFlex="10"></div>
-  <div fxFlexOffset="10" fxFlex="80" fxLayout="column">
+<div fxLayout="row" fxLayoutAlign="center">
+  <div fxFlex="15"></div>
+  <div fxFlex="70" fxLayout="column" fxLayoutAlign="flex-start">
+    <h2 fxFlexAlign="center">Welcome to my webstore!</h2>
     <mat-card class="news-component" *ngFor="let news_component of news">
       <mat-card-title>{{news_component.headline}}</mat-card-title>
       <mat-card-content>{{news_component.content}}</mat-card-content>
     </mat-card>
   </div>
-  <div fxFlex="10"></div>
+  <div fxFlex="15"></div>
 </div>

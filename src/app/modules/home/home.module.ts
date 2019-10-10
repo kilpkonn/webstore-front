@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home.component';
 import { AppMaterialModule } from "../app-material/app-material.module";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { AppMaterialModule } from "../app-material/app-material.module";
   imports: [
     CommonModule,
     HomeRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
+    FlexLayoutModule
   ]
 })
 export class HomeModule { }
