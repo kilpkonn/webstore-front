@@ -3,7 +3,7 @@ import {Category} from '../../../../shared/models/category';
 import {CategoryService} from '../../services/category.service';
 
 @Component({
-  selector: 'app-categories',
+  selector: 'product-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.css']
 })

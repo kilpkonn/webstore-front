@@ -1,6 +1,8 @@
-<div *ngIf="categories">
-      <span><a [routerLink]="['/products']">All</a></span>
-      <span *ngFor="let cat of categories">
+<mat-toolbar *ngIf="categories">
+  <mat-toolbar-row>
+    <span><a [routerLink]="['/products']">All</a></span>
+    <span *ngFor="let cat of categories">
         <a [routerLink]="['/products']" [queryParams]="{category: cat.name}">{{cat.name}}</a>
       </span>
-</div>
+  </mat-toolbar-row>
+</mat-toolbar>
