@@ -4,5 +4,8 @@
   min-width: 100%;
 }
 
-h2 {
+mat-card-footer {
+  text-align: end;
+  color: #7e7e7e;
+  padding-right: 1em;
 }
