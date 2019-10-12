@@ -12,10 +12,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private newsService: NewsService) { }
 
-  parseDate(date: string) : Date{
-    return new Date(date);
-  }
-
   getNews(): void {
     this.newsService.getNews()
       .subscribe(news => this.news = news);

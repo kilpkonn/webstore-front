@@ -5,7 +5,7 @@
     <mat-card class="news-component" *ngFor="let news_component of news">
       <mat-card-title>{{news_component.headline}}</mat-card-title>
       <mat-card-content>{{news_component.content}}</mat-card-content>
-      <mat-card-footer>{{parseDate(news_component.createdAt) | date: 'dd.MM.yyyy HH:mm'}}</mat-card-footer>
+      <mat-card-footer>{{news_component.createdAt | date: 'dd.MM.yyyy HH:mm'}}</mat-card-footer>
     </mat-card>
   </div>
   <div fxFlex="15"></div>
