@@ -1,0 +1,6 @@
+mat-card {
+  margin: 0.5em;
+  min-height: 12em;
+  min-width: 9em;
+  max-width: 9em;
+}

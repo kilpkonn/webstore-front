@@ -7,8 +7,8 @@ import { fader, slider } from './route-animations';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations: [
-    //fader,
-    slider
+    slider,
+    //fader
   ]
 })
 export class AppComponent {
