@@ -9,6 +9,10 @@ app-footer {
   bottom: 0;
 }
 
+main {
+  position: relative;
+}
+
 .spacer {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;

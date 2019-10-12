@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {ContactComponent} from "./components/contact.component";
 
 
-const routes: Routes = [{ path: '', component: ContactComponent }];
+const routes: Routes = [{ path: '', component: ContactComponent , data: {animation: 'is_right'}}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes),
