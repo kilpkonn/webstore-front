@@ -2,9 +2,11 @@
 <div fxLayout="row" fxLayoutAlign="center">
   <div fxFlex="15"></div>
   <div fxLayout="row wrap" fxFlex.md="70">
-    <div fxFlex *ngFor="let product of products">
-      <product-listing [product]="product"></product-listing>
-    </div>
+    <ul *ngIf="show" [@listAnimation]="products.length">
+      <li fxFlex *ngFor="let product of products">
+        <product-listing [product]="product"></product-listing>
+      </li>
+    </ul>
   </div>
   <div fxFlex="15"></div>
 </div>

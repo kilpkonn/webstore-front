@@ -1,21 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../../shared/models/product';
 import { ProductService } from '../services/product.service';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { listAnimation } from "../../../shared/animations/list-animations";
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
+  animations: [listAnimation]
 })
 export class ProductsComponent implements OnInit {
+  @Input() show: boolean = false;
   products: Product[];
   hasCat: boolean;
 
-  constructor(private route: ActivatedRoute, private productService: ProductService) { }
+  constructor(private route: ActivatedRoute, private productService: ProductService) {
+  }
 
-  getProducts(): void {
-
+  showProducts(): void {
+    this.show = true;
   }
 
   ngOnInit() {
