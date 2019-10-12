@@ -9,3 +9,7 @@ mat-card-footer {
   color: #7e7e7e;
   padding-right: 1em;
 }
+
+mat-card {
+  margin: 0.5em;
+}
