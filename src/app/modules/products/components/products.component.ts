@@ -1,21 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../../shared/models/product';
 import { ProductService } from '../services/product.service';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { listAnimation } from "../../../shared/animations/list-animations";
+import { slider } from "../../../shared/animations/route-animations";
 
 @Component({
+  host: {
+    '[@routeAnimations]': '',
+    '(@routeAnimations.done)': "onAnimationFinished()"
+  },
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
+  animations: [slider, listAnimation]
 })
 export class ProductsComponent implements OnInit {
+  show: boolean = false;
   products: Product[];
-  hasCat: boolean;
 
-  constructor(private route: ActivatedRoute, private productService: ProductService) { }
-
-  getProducts(): void {
-
+  constructor(private route: ActivatedRoute, private productService: ProductService) {
   }
 
   ngOnInit() {
@@ -29,6 +33,10 @@ export class ProductsComponent implements OnInit {
       }
     });
     // this.getProducts();
+  }
+
+  onAnimationFinished () {
+    this.show = true;
   }
 
 }

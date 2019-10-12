@@ -2,11 +2,11 @@
   <div fxFlex="15"></div>
   <div fxFlex="70" fxLayout="column" fxLayoutAlign="flex-start">
     <h2 fxFlexAlign="center">Welcome to my webstore!</h2>
-    <mat-card class="news-component" *ngFor="let news_component of news">
-      <mat-card-title>{{news_component.headline}}</mat-card-title>
-      <mat-card-content>{{news_component.content}}</mat-card-content>
-      <mat-card-footer>{{news_component.createdAt | date: 'dd.MM.yyyy HH:mm'}}</mat-card-footer>
-    </mat-card>
+    <ul *ngIf="news && show" [@listAnimation]="news.length">
+      <li *ngFor="let news_component of news">
+        <news-component [news]="news_component"></news-component>
+      </li>
+    </ul>
   </div>
   <div fxFlex="15"></div>
 </div>

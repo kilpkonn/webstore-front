@@ -1,0 +1,12 @@
+mat-card {
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  margin: 0.5em;
+}
+
+mat-card-footer {
+  text-align: end;
+  color: #7e7e7e;
+  padding-right: 1em;
+}

@@ -8,7 +8,7 @@ import { Product } from "../../../../shared/models/product";
 })
 export class ListingComponent implements OnInit {
 
-  @Input() product: Product
+  @Input() product: Product;
 
   constructor() { }
 
