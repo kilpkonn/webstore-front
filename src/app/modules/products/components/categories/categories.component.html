@@ -1,5 +1,6 @@
 <mat-toolbar *ngIf="categories">
   <mat-toolbar-row>
+    <span>Categories:</span>
     <span><a [routerLink]="['/products']">All</a></span>
     <span *ngFor="let cat of categories">
         <a [routerLink]="['/products']" [queryParams]="{category: cat.name}">{{cat.name}}</a>
