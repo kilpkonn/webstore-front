@@ -3,23 +3,23 @@ import { Product } from '../../../shared/models/product';
 import { ProductService } from '../services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { listAnimation } from "../../../shared/animations/list-animations";
+import { slider } from "../../../shared/animations/route-animations";
 
 @Component({
+  host: {
+    '[@routeAnimations]': '',
+    '(@routeAnimations.done)': "onAnimationFinished()"
+  },
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
-  animations: [listAnimation]
+  animations: [slider, listAnimation]
 })
 export class ProductsComponent implements OnInit {
-  @Input() show: boolean = false;
+  show: boolean = false;
   products: Product[];
-  hasCat: boolean;
 
   constructor(private route: ActivatedRoute, private productService: ProductService) {
-  }
-
-  showProducts(): void {
-    this.show = true;
   }
 
   ngOnInit() {
@@ -33,6 +33,10 @@ export class ProductsComponent implements OnInit {
       }
     });
     // this.getProducts();
+  }
+
+  onAnimationFinished () {
+    this.show = true;
   }
 
 }
