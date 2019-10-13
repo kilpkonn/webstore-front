@@ -19,5 +19,17 @@ export class ProductService {
     return this.http.get<Product[]>(this.url, {
       params: new HttpParams().set('category', category)});
   }
+
+  createProduct(product: Object): Observable<Object> {
+    return this.http.post(this.url, product);
+  }
+
+  updateProduct(id: number, value: any): Observable<Object> {
+    return this.http.put(this.url + '/' + id, value);
+  }
+
+  deleteProduct(id: number): Observable<any> {
+    return this.http.delete(this.url + '/' + id);  //TODO: some fancy format, maybe handle response
+  }
 }
 
