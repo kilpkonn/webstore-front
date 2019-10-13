@@ -19,7 +19,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
     ProductsRoutingModule,
     FlexLayoutModule,
     AppMaterialModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class ProductsModule { }
