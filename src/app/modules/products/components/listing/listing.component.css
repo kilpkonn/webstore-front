@@ -3,4 +3,9 @@ mat-card {
   min-height: 12em;
   min-width: 9em;
   max-width: 9em;
+  transition: 1s;
+}
+
+mat-card:hover {
+  transform: scale(1.1);
 }

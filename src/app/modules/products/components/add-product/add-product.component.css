@@ -3,6 +3,12 @@ mat-card {
   min-height: 12em;
   min-width: 9em;
   max-width: 9em;
+  transition: 1s;
+}
+
+mat-card:hover {
+  color: #217626;
+  transform: scale(1.1);
 }
 
 mat-card-title {
