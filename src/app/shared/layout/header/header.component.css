@@ -5,11 +5,16 @@
 
 a {
   text-decoration: none;
+  font-size: 1.1em;
   color: #e5e5e5;
-  margin-right: 15px;
+  margin-right: 0.7em;
 }
 
 a:hover,
 a:active {
   color: #c5c5c5;
+}
+
+h1 {
+  font-size: 1.3em;
 }

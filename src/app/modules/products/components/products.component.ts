@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { Product } from '../../../shared/models/product';
 import { ProductService } from '../services/product.service';
-import { ActivatedRoute } from '@angular/router';
 import { listAnimation } from "../../../shared/animations/list-animations";
 import { slider } from "../../../shared/animations/route-animations";
 
@@ -19,7 +20,8 @@ export class ProductsComponent implements OnInit {
   show: boolean = false;
   products: Product[];
 
-  constructor(private route: ActivatedRoute, private productService: ProductService) {
+  constructor(private route: ActivatedRoute,
+              private productService: ProductService) {
   }
 
   ngOnInit() {

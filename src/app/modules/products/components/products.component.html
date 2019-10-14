@@ -1,9 +1,12 @@
 <product-categories></product-categories>
 <div fxLayout="row" fxLayoutAlign="center">
   <div fxFlex="15"></div>
-  <div fxLayout="row wrap" fxFlex.md="70">
-    <ul *ngIf="show && products" [@listAnimation]="products.length">
-      <li fxFlex *ngFor="let product of products">
+  <div fxLayout="row" fxFlex fxLayoutAlign="center">
+    <ul fxLayout="row wrap" fxLayoutAlign="start center" *ngIf="show && products" [@listAnimation]="products.length">
+      <li>
+        <products-add-product></products-add-product>
+      </li>
+      <li *ngFor="let product of products">
         <product-listing [product]="product"></product-listing>
       </li>
     </ul>

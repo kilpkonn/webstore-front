@@ -1,0 +1,34 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <div fxFlex="15"></div>
+  <div fxLayout="column" fxFlex="70">
+    <div [hidden]="submitted">
+      <h2>Create new product</h2>
+      <form (ngSubmit)="onSubmit()" fxLayout="column">
+
+        <div fxLayout="row">
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matNativeControl type="text" id="name" required [(ngModel)]="product.name" name="name">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label for="amount">Amount</mat-label>
+            <input matNativeControl type="text" id="amount" required [(ngModel)]="product.amount" name="amount">
+          </mat-form-field>
+        </div>
+
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea matNativeControl type="text" id="description" required [(ngModel)]="product.description" name="description"></textarea>
+        </mat-form-field>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div [hidden]="!submitted">
+      <h4>You submitted successfully!</h4>
+    </div>
+  </div>
+  <div fxFlex="15"></div>
+</div>
