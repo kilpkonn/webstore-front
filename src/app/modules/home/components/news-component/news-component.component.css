@@ -3,11 +3,7 @@ mat-card {
   width: 100%;
   min-width: 100%;
   margin: 0.5em;
-  transition: 1s;
-}
-
-mat-card:hover {
-  transform: scale(1.02);
+  overflow-wrap: break-word;
 }
 
 mat-card-footer {

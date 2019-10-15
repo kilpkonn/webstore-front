@@ -3,4 +3,5 @@ mat-card {
   min-height: 12em;
   min-width: 9em;
   max-width: 9em;
+  overflow-wrap: break-word;
 }
