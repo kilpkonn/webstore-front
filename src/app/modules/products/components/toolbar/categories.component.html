@@ -5,5 +5,10 @@
     <span *ngFor="let cat of categories">
         <a [routerLink]="['/products']" [queryParams]="{category: cat.name}">{{cat.name}}</a>
       </span>
+    <div class="spacer"></div>
+    <mat-form-field>
+      <mat-label>Search:</mat-label>
+      <input #search matNativeControl type="search" (keyup.enter)="searchByName(search.value)">
+    </mat-form-field>
   </mat-toolbar-row>
 </mat-toolbar>
