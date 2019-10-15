@@ -8,7 +8,6 @@ mat-card {
 
 mat-card:hover {
   color: #217626;
-  transform: scale(1.1);
 }
 
 mat-card-title {
