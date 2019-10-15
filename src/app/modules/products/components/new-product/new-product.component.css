@@ -1,3 +1,17 @@
 mat-form-field {
   margin: 2em;
 }
+
+textarea {
+  min-height: 6em;
+}
+
+button {
+  transition: 0.5s;
+  width: 6em;
+}
+
+button:hover {
+  background-color: #7e7e7e;
+  transform: scale(1.02);
+}
