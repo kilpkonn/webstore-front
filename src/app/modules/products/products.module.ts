@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from './components/products.component';
@@ -20,6 +21,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
     FlexLayoutModule,
     AppMaterialModule,
     FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductsModule { }

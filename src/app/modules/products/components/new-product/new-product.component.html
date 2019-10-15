@@ -3,7 +3,7 @@
   <div fxLayout="column" fxFlex="70">
     <div [hidden]="submitted">
       <h2>Create new product</h2>
-      <form (ngSubmit)="onSubmit()" fxLayout="column">
+      <form #productForm (ngSubmit)="onSubmit()" fxLayout="column">
 
         <div fxLayout="row">
           <mat-form-field>
@@ -12,22 +12,38 @@
           </mat-form-field>
 
           <mat-form-field>
-            <mat-label for="amount">Amount</mat-label>
-            <input matNativeControl type="text" id="amount" required [(ngModel)]="product.amount" name="amount">
+            <mat-label>Category</mat-label>
+            <mat-select id="category" required [(ngModel)]="product.category" name="category">
+              <mat-option *ngFor="let category of categories" [value]="category">{{category.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Amount</mat-label>
+            <input matNativeControl type="number" id="amount" required [(ngModel)]="product.amount" name="amount">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Price (€)</mat-label>
+            <input matNativeControl type="number" id="price" required [(ngModel)]="product.price" name="amount">
           </mat-form-field>
         </div>
 
         <mat-form-field>
           <mat-label>Description</mat-label>
-          <textarea matNativeControl type="text" id="description" required [(ngModel)]="product.description" name="description"></textarea>
+          <textarea matNativeControl type="text" id="description" required [(ngModel)]="product.description"
+                    name="description"></textarea>
         </mat-form-field>
 
-        <button type="submit">Submit</button>
+        <diV fxLayoutAlign="center center">
+          <button mat-raised-button type="submit">Submit</button>
+        </diV>
       </form>
     </div>
 
     <div [hidden]="!submitted">
       <h4>You submitted successfully!</h4>
+      <button mat-raised-button (click)="newProduct(); productForm.reset()">New product</button>
     </div>
   </div>
   <div fxFlex="15"></div>

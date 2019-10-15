@@ -1,7 +1,9 @@
-mat-toolbar-row {
-}
 
 span {
   font-size: 1em;
   margin: 0.5em;
+}
+
+a {
+ color: #1c1c1c;
 }
