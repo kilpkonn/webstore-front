@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 
 import { Product } from '../../../shared/models/product';
 import { ProductService } from '../services/product.service';
 import { listAnimation } from "../../../shared/animations/list-animations";
 import { slider } from "../../../shared/animations/route-animations";
-import { MatIconRegistry } from "@angular/material/icon";
-import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
   host: {
@@ -40,6 +40,10 @@ export class ProductsComponent implements OnInit {
     this.route.queryParams.subscribe(queryParams => {
       if (typeof queryParams.category !== 'undefined') {
         this.productService.getFilteredProducts(queryParams.category)
+          .subscribe(products => this.products = products);
+      }
+      else if (typeof queryParams.name !== 'undefined') {
+        this.productService.getSearchedProducts(queryParams.name)
           .subscribe(products => this.products = products);
       } else {
         this.productService.getProducts()

@@ -20,6 +20,11 @@ export class ProductService {
       params: new HttpParams().set('category', category)});
   }
 
+  getSearchedProducts(name: string): Observable<Product[]> {
+    return this.http.get<Product[]>(this.url, {
+      params: new HttpParams().set('name', name)});
+  }
+
   createProduct(product: Object): Observable<Object> {
     return this.http.post(this.url, product);
   }
