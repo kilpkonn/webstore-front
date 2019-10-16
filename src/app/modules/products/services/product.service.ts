@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../../../shared/models/product';
-import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,10 @@ export class ProductService {
   getFilteredProducts(category: string): Observable<Product[]> {
     return this.http.get<Product[]>(this.url, {
       params: new HttpParams().set('category', category)});
+  }
+
+  getImage(id: number): Observable<Blob> {
+    return this.http.get(`${this.url}/${id}/image`, {responseType: 'blob'});
   }
 
   getSearchedProducts(name: string): Observable<Product[]> {

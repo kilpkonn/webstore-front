@@ -5,8 +5,8 @@ import { Router } from "@angular/router";
 
 @Component({
   selector: 'products-toolbar',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css']
+  templateUrl: './toolbar.component.html',
+  styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
   categories: Category[];
