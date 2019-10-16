@@ -10,3 +10,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+mat-card-footer {
+  margin: 0 0.5em 0.2em 0;
+  position: absolute;
+  bottom: 0;
+}
