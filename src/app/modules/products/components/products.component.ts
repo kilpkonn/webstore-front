@@ -22,15 +22,8 @@ export class ProductsComponent implements OnInit {
   show = false;
   products: Product[];
 
-  constructor(private matIconRegistry: MatIconRegistry,
-              private domSanitizer: DomSanitizer,
-              private route: ActivatedRoute,
-              private productService: ProductService) {
-    this.matIconRegistry.addSvgIcon(
-      'add_circle',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/add_circle.svg')
-    );
-  }
+  constructor(private route: ActivatedRoute,
+              private productService: ProductService) { }
 
   ngOnInit() {
     this.getProducts();

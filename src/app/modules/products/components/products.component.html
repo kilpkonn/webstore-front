@@ -7,9 +7,7 @@
         <products-add-product></products-add-product>
       </li>
       <li *ngFor="let product of products">
-        <button mat-icon-button (click)="removeProduct(product)">
-          <mat-icon svgIcon="add_circle"></mat-icon>
-        </button>
+        <delete-button (click)="removeProduct(product)"></delete-button>
         <product-listing [product]="product"></product-listing>
       </li>
     </ul>

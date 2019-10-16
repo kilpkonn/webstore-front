@@ -5,36 +5,36 @@ import {
   query, animate, group
 } from '@angular/animations';
 
-export const fader =
-  trigger('routeAnimations', [
-    transition('* <=> *', [
-      query(':enter, :leave', [
-        style({
-          position: 'absolute',
-          left: 0,
-          width: '100%',
-          opacity: 0,
-          transform: 'scale(0) translateY(100%)'
-        })
-      ], {optional: true}),
-      query(':enter', [
-        animate('600ms ease',
-          style({
-            opacity: 1,
-            transform: 'scale(1) translateY(0)'
-          })
-        )
-      ], {optional: true}),
-    ])
-  ]);
-
 export const slider =
   trigger('routeAnimations', [
     transition('* => isLeft', slideTo('left')),
     transition('* => isRight', slideTo('right')),
     transition('isRight => *', slideTo('left')),
-    transition('isLeft => *', slideTo('right'))
+    transition('isLeft => *', slideTo('right')),
+    // transition('* <=> *', fade())
   ]);
+
+function fade() {
+  return [
+    query(':enter, :leave', [
+      style({
+        position: 'absolute',
+        left: 0,
+        width: '100%',
+        opacity: 0,
+        transform: 'scale(0) translateY(100%)'
+      })
+    ], {optional: true}),
+    query(':enter', [
+      animate('600ms ease',
+        style({
+          opacity: 1,
+          transform: 'scale(1) translateY(0)'
+        })
+      )
+    ], {optional: true}),
+  ];
+}
 
 function slideTo(direction: string) {
   const optional = {optional: true};
