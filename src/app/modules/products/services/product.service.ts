@@ -21,7 +21,6 @@ export class ProductService {
   }
 
   getFilteredProducts(params: Params) {
-    console.log(params.category);
     let prms = new HttpParams();
     if (params.category !== undefined) {
       prms = prms.set('category', params.category);
@@ -52,11 +51,11 @@ export class ProductService {
   }
 
   updateProduct(id: number, value: any): Observable<Object> {
-    return this.http.put(this.url + '/' + id, value);
+    return this.http.put(`${this.url}/${id}`, value);
   }
 
   deleteProduct(id: number): Observable<any> {
-    return this.http.delete(this.url + '/' + id);  // TODO: some fancy format, maybe handle response
+    return this.http.delete(`${this.url}/${id}`);  // TODO: maybe handle response
   }
 }
 

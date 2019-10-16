@@ -1,18 +1,24 @@
 mat-card {
   margin: 0.5em;
-  min-height: 12em;
-  min-width: 9em;
-  max-width: 9em;
+  min-height: 13em;
+  max-height: 14em;
+  min-width: 11em;
+  max-width: 12em;
   overflow-wrap: break-word;
   cursor: pointer;
 }
 
 img {
+  display: block;
   padding-top: 0.5em;
+  height: fit-content;
+  max-height: 13em;
+  object-fit: contain;
 }
 
 mat-card-footer {
   margin: 0 0.5em 0.2em 0;
   position: absolute;
   bottom: 0;
+  right: 0;
 }

@@ -1,4 +1,26 @@
 mat-card {
   width: 50%;
-  margin: auto;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+mat-card-header, mat-card-actions {
+  margin-left: 1.6em;
+}
+
+mat-card-actions a {
+  margin-top: 0.5em;
+}
+
+img, img.mat-card-image {
+  width: fit-content;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0.5em;
+  padding: 0;
+}
+
+div {
+  margin: 0.5em;
 }
