@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home.component';
-import { AppMaterialModule } from "../app-material/app-material.module";
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { AppMaterialModule } from '../app-material/app-material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { NewsComponentComponent } from './components/news-component/news-component.component';
 
 

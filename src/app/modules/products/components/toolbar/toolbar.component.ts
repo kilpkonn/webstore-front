@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../../../../shared/models/category';
 import { CategoryService } from '../../services/category.service';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'products-toolbar',
@@ -24,8 +24,8 @@ export class ToolbarComponent implements OnInit {
     this.getCategories();
   }
 
-  searchByName(name_str: string) {
-    this.router.navigate(['/products'], { queryParams: { name: name_str } });
+  searchByName(nameStr: string) {
+    this.router.navigate(['/products'], { queryParams: { name: nameStr } });
   }
 
 }

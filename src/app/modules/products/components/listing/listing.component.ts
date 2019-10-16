@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from "../../../../shared/models/product";
+import { Product } from '../../../../shared/models/product';
 import {ProductService} from '../../services/product.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class ListingComponent implements OnInit {
   @Input() product: Product;
 
   createImageFromBlob(image: Blob) {
-    let reader = new FileReader();
+    const reader = new FileReader();
     reader.addEventListener('load', () => {
       this.productImage = reader.result;
     }, false);

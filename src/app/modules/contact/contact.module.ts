@@ -5,7 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ContactRoutingModule } from './contact-routing.module';
 import { ContactComponent } from './components/contact.component';
-import {MapComponent} from "./components/map/map.component";
+import {MapComponent} from './components/map/map.component';
 
 
 @NgModule({

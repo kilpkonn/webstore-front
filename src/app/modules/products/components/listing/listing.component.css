@@ -4,11 +4,11 @@ mat-card {
   min-width: 9em;
   max-width: 9em;
   overflow-wrap: break-word;
+  cursor: pointer;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  padding-top: 0.5em;
 }
 
 mat-card-footer {

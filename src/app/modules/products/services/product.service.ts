@@ -15,6 +15,10 @@ export class ProductService {
     return this.http.get<Product[]>(this.url);
   }
 
+  getProductById(id: number): Observable<Product> {
+    return this.http.get<Product>(`${this.url}/${id}`);
+  }
+
   getFilteredProducts(category: string): Observable<Product[]> {
     return this.http.get<Product[]>(this.url, {
       params: new HttpParams().set('category', category)});
@@ -38,7 +42,7 @@ export class ProductService {
   }
 
   deleteProduct(id: number): Observable<any> {
-    return this.http.delete(this.url + '/' + id);  //TODO: some fancy format, maybe handle response
+    return this.http.delete(this.url + '/' + id);  // TODO: some fancy format, maybe handle response
   }
 }
 
