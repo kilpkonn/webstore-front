@@ -1,14 +1,33 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <span>Categories:</span>
-    <span><a [routerLink]="['/products']">All</a></span>
-    <span *ngFor="let cat of categories">
-        <a [routerLink]="['/products']" [queryParams]="{category: cat.name}">{{cat.name}}</a>
-      </span>
-    <div class="spacer"></div>
+  <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <mat-label>Search:</mat-label>
-      <input #search matNativeControl type="search" (keyup.enter)="searchByName(search.value)">
+    <mat-label>Category</mat-label>
+      <mat-select formControlName="category">
+        <mat-option value="">All</mat-option>
+        <mat-option *ngFor="let cat of categories" value="{{cat.name}}">{{cat.name | titlecase}}</mat-option>
+      </mat-select>
     </mat-form-field>
+    <mat-form-field>
+      <mat-label>Search by name</mat-label>
+      <input matInput type="text" formControlName="name">
+    </mat-form-field>
+    <!--<mat-form-field>
+      <mat-label>Sort</mat-label>
+      <mat-select formControlName="sort">
+        <mat-option value="">Name</mat-option>
+        <mat-option value="price">Price</mat-option>
+        <mat-option value="stock">Amount</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Order</mat-label>
+      <mat-select formControlName="order">
+        <mat-option value="">Ascending</mat-option>
+        <mat-option value="-1">Descending</mat-option>
+      </mat-select>
+    </mat-form-field>-->
+    <button mat-button type="submit" [disabled]="!filterForm.valid">Search</button>
+  </form>
   </mat-toolbar-row>
 </mat-toolbar>

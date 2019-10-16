@@ -1,3 +1,11 @@
+mat-toolbar {
+  font-size: 1em;
+}
+
+mat-form-field {
+  padding-top: 1em;
+  margin: 0 1em;
+}
 
 span {
   font-size: 1em;

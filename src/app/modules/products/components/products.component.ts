@@ -38,16 +38,8 @@ export class ProductsComponent implements OnInit {
 
   private getProducts() {
     this.route.queryParams.subscribe(queryParams => {
-      if (typeof queryParams.category !== 'undefined') {
-        this.productService.getFilteredProducts(queryParams.category)
-          .subscribe(products => this.products = products);
-      } else if (typeof queryParams.name !== 'undefined') {
-        this.productService.getSearchedProducts(queryParams.name)
-          .subscribe(products => this.products = products);
-      } else {
-        this.productService.getProducts()
-          .subscribe(products => this.products = products);
-      }
+      this.productService.getFilteredProducts(queryParams)
+        .subscribe(products => this.products = products);
     });
   }
 
