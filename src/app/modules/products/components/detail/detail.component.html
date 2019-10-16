@@ -4,15 +4,27 @@
     <mat-card-subtitle *ngIf="product.category">Category: {{product.category.name}}</mat-card-subtitle>
     <mat-card-subtitle *ngIf="!product.category">Category: none</mat-card-subtitle>
   </mat-card-header>
-  <mat-card-content>
-    <mat-grid-list cols="4">
-      <mat-grid-tile [colspan]="2" [rowspan]="2"><img mat-card-image [attr.src]="productImage"></mat-grid-tile>
-      <mat-grid-tile [colspan]="2">{{product.description}}</mat-grid-tile>
-      <mat-grid-tile>Price: {{product.price}} €</mat-grid-tile>
-      <mat-grid-tile>In Stock: {{product.amount}}</mat-grid-tile>
-    </mat-grid-list>
+  <mat-card-content fxLayout="row">
+    <mat-divider fxFlexOffset="5" fxFlex="90"></mat-divider>
+    <div fxFlex="50" fxLayoutAlign="center center">
+      <img mat-card-image [attr.src]="productImage">
+    </div>
+    <div fxFlex="50" fxLayout="column">
+      <div fxFlexOffset="10" fxFlex="60">
+        {{product.description}}
+      </div>
+      <div fxFlex="30" fxLayout="row">
+        <div fxFlex="50">
+          Price: {{product.price}} €
+        </div>
+        <div fxFlex="50">
+          In Stock: {{product.amount}}
+        </div>
+      </div>
+    </div>
   </mat-card-content>
   <mat-card-actions>
+    <mat-divider fxFlexOffset="5" fxFlex="90"></mat-divider>
     <a mat-button [routerLink]="'/products'">Go Back</a>
   </mat-card-actions>
 </mat-card>
