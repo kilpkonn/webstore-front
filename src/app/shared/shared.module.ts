@@ -4,20 +4,20 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AppMaterialModule } from '../modules/app-material/app-material.module';
 import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from '../app-routing.module';
+import { DeleteButtonComponent } from './components/delete-button/delete-button.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, DeleteButtonComponent],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DeleteButtonComponent
   ],
   imports: [
     CommonModule,
     AppMaterialModule,
     RouterModule,
-    AppRoutingModule
   ]
 })
 export class SharedModule { }

@@ -4,6 +4,7 @@ ul {
 }
 
 li {
+  position: relative;
   transition: 1s;
 }
 li:hover {

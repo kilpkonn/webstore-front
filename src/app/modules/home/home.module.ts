@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home.component';
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NewsComponentComponent } from './components/news-component/news-component.component';
+import { SharedModule } from "../../shared/shared.module";
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { NewsComponentComponent } from './components/news-component/news-compone
     CommonModule,
     HomeRoutingModule,
     AppMaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SharedModule
   ]
 })
 export class HomeModule { }

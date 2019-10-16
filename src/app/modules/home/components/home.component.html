@@ -4,6 +4,7 @@
     <h2 fxFlexAlign="center">Welcome to my webstore!</h2>
     <ul *ngIf="news && show" [@listAnimation]="news.length">
       <li *ngFor="let news_component of news">
+        <delete-button (click)="removeNews(news_component)"></delete-button>
         <news-component [news]="news_component"></news-component>
       </li>
     </ul>

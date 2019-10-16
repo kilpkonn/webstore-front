@@ -16,4 +16,8 @@ export class NewsService {
   getNews(): Observable<News[]> {
     return this.http.get<News[]>(this.url);
   }
+
+  deleteNews(id: number): Observable<any> {
+    return this.http.delete(`${this.url}/${id}`);  // TODO: maybe handle response
+  }
 }
