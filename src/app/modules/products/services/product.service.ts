@@ -20,6 +20,10 @@ export class ProductService {
       params: new HttpParams().set('category', category)});
   }
 
+  getImage(id: number): Observable<Blob> {
+    return this.http.get(`${this.url}/${id}/image`, {responseType: 'blob'});
+  }
+
   getSearchedProducts(name: string): Observable<Product[]> {
     return this.http.get<Product[]>(this.url, {
       params: new HttpParams().set('name', name)});
