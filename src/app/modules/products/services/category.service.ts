@@ -7,7 +7,7 @@ import {Category} from '../../../shared/models/category';
   providedIn: 'root'
 })
 export class CategoryService {
-  private url = 'api/toolbar';
+  private url = 'api/categories';
 
   constructor(private http: HttpClient) { }
 
