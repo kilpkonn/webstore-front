@@ -6,7 +6,7 @@
   </mat-card-header>
   <mat-card-content>
     <mat-grid-list cols="4">
-      <mat-grid-tile [colspan]="2" [rowspan]="2"><img mat-card-image [src]="productImage"></mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="2"><img mat-card-image [attr.src]="productImage"></mat-grid-tile>
       <mat-grid-tile [colspan]="2">{{product.description}}</mat-grid-tile>
       <mat-grid-tile>Price: {{product.price}} €</mat-grid-tile>
       <mat-grid-tile>In Stock: {{product.amount}}</mat-grid-tile>

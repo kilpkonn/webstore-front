@@ -2,3 +2,8 @@ mat-card {
   width: 50%;
   margin: auto;
 }
+
+img {
+  height: fit-content;
+  object-fit: contain;
+}
