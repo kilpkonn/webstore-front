@@ -4,8 +4,32 @@ ul {
 }
 
 li {
+  position: relative;
   transition: 1s;
 }
 li:hover {
   transform: scale(1.02);
+}
+
+button {
+  position: absolute;
+  right: -0.5em;
+  top: -1.2em;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  z-index: 90;
+}
+
+mat-icon {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  transform: rotate(45deg);
+  color: rgba(203, 0, 0, 0.7);
+}
+
+mat-icon:hover {
+  color: #b00000;
 }
