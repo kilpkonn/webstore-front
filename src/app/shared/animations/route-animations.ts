@@ -3,7 +3,7 @@ import {
   transition,
   style,
   query, animate, group
-} from "@angular/animations";
+} from '@angular/animations';
 
 export const fader =
   trigger('routeAnimations', [

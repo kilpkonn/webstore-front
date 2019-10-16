@@ -10,8 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpErrorInterceptor } from './shared/services/http-error.interceptor';
 
 import { AppComponent } from './app.component';
-import { AppMaterialModule } from "./modules/app-material/app-material.module";
-import { SharedModule } from "./shared/shared.module";
+import { AppMaterialModule } from './modules/app-material/app-material.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [

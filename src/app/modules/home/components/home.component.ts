@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from "../services/news.service";
-import { News } from "../../../shared/models/news";
-import { slider } from "../../../shared/animations/route-animations";
-import { listAnimation } from "../../../shared/animations/list-animations";
+import { NewsService } from '../services/news.service';
+import { News } from '../../../shared/models/news';
+import { slider } from '../../../shared/animations/route-animations';
+import { listAnimation } from '../../../shared/animations/list-animations';
 
 @Component({
   host: {
     '[@routeAnimations]': '',
-    '(@routeAnimations.done)': "onAnimationFinished()"
+    '(@routeAnimations.done)': 'onAnimationFinished()'
   },
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,7 +15,7 @@ import { listAnimation } from "../../../shared/animations/list-animations";
   animations: [slider, listAnimation]
 })
 export class HomeComponent implements OnInit {
-  show: boolean = false;
+  show = false;
   news: News[];
 
   constructor(private newsService: NewsService) { }
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     this.getNews();
   }
 
-  onAnimationFinished () {
+  onAnimationFinished() {
     this.show = true;
   }
 }

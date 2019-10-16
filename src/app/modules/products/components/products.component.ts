@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MatIconRegistry } from "@angular/material/icon";
-import { DomSanitizer } from "@angular/platform-browser";
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 import { Product } from '../../../shared/models/product';
 import { ProductService } from '../services/product.service';
-import { listAnimation } from "../../../shared/animations/list-animations";
-import { slider } from "../../../shared/animations/route-animations";
+import { listAnimation } from '../../../shared/animations/list-animations';
+import { slider } from '../../../shared/animations/route-animations';
 
 @Component({
   host: {
     '[@routeAnimations]': '',
-    '(@routeAnimations.done)': "onAnimationFinished()"
+    '(@routeAnimations.done)': 'onAnimationFinished()'
   },
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -19,7 +19,7 @@ import { slider } from "../../../shared/animations/route-animations";
   animations: [slider, listAnimation]
 })
 export class ProductsComponent implements OnInit {
-  show: boolean = false;
+  show = false;
   products: Product[];
 
   constructor(private matIconRegistry: MatIconRegistry,
@@ -41,8 +41,7 @@ export class ProductsComponent implements OnInit {
       if (typeof queryParams.category !== 'undefined') {
         this.productService.getFilteredProducts(queryParams.category)
           .subscribe(products => this.products = products);
-      }
-      else if (typeof queryParams.name !== 'undefined') {
+      } else if (typeof queryParams.name !== 'undefined') {
         this.productService.getSearchedProducts(queryParams.name)
           .subscribe(products => this.products = products);
       } else {

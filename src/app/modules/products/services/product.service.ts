@@ -42,7 +42,7 @@ export class ProductService {
   }
 
   deleteProduct(id: number): Observable<any> {
-    return this.http.delete(this.url + '/' + id);  //TODO: some fancy format, maybe handle response
+    return this.http.delete(this.url + '/' + id);  // TODO: some fancy format, maybe handle response
   }
 }
 

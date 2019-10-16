@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from "@angular/forms";
-import { ProductService } from "../../services/product.service";
-import { Product } from "../../../../shared/models/product";
-import { Category } from "../../../../shared/models/category";
-import { CategoryService } from "../../services/category.service";
+import { FormBuilder, Validators } from '@angular/forms';
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../../../shared/models/product';
+import { Category } from '../../../../shared/models/category';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'new-product',
