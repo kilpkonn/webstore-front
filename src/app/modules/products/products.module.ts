@@ -11,10 +11,11 @@ import { AppMaterialModule } from "../app-material/app-material.module";
 import { ListingComponent } from './components/listing/listing.component';
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 
 @NgModule({
-  declarations: [ProductsComponent, ToolbarComponent, ListingComponent, NewProductComponent, AddProductComponent],
+  declarations: [ProductsComponent, ToolbarComponent, ListingComponent, NewProductComponent, AddProductComponent, DetailComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule,

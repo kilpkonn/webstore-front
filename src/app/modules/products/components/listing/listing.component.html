@@ -1,5 +1,5 @@
-<mat-card>
+<mat-card [routerLink]="['/products', product.id]">
   <mat-card-title>{{product.name}}</mat-card-title>
-  <mat-card-content><img [src]="productImage" alt=""></mat-card-content>
+  <mat-card-content><img mat-card-image [src]="productImage"></mat-card-content>
   <mat-card-footer>Price: {{product.price}} €</mat-card-footer>
 </mat-card>
