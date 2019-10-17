@@ -25,7 +25,7 @@ export class ProductsComponent implements OnInit {
       value = a.name < b.name ? -1 : 1;
     } else if (sort === 'price') {
       value = a.price - b.price;
-    } else if (sort === 'amount') {
+    } else if (sort === 'stock') {
       value = a.amount - b.amount;
     }
     return order !== undefined && order === 'reverse' ? -value : value;
