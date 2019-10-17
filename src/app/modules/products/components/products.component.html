@@ -6,7 +6,7 @@
       <li>
         <products-add-product></products-add-product>
       </li>
-      <li *ngFor="let product of products">
+      <li *ngFor="let product of products; trackBy: trackElement">
         <delete-button (click)="removeProduct(product)"></delete-button>
         <product-listing [product]="product"></product-listing>
       </li>

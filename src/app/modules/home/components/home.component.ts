@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
+
 import { NewsService } from '../services/news.service';
 import { News } from '../../../shared/models/news';
 import { slider } from '../../../shared/animations/route-animations';
