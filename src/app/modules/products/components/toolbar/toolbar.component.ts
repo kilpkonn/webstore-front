@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Category } from '../../../../shared/models/category';
 import { CategoryService } from '../../services/category.service';
 import { Router } from '@angular/router';
-import {FormControl, FormGroup} from '@angular/forms';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import { FormControl, FormGroup } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'products-toolbar',
@@ -25,12 +25,14 @@ export class ToolbarComponent implements OnInit {
   }
 
   onSubmit() {
-    this.router.navigate(['products'], {queryParams: {
-        category: this.filterForm.value.category,
-        name: this.filterForm.value.name
-        // sort: this.filterForm.value.sort,
-        // order: this.filterForm.value.order
-    }});
+    let params = {};
+    if (typeof this.filterForm.value.category !== 'undefined' && this.filterForm.value.category !== '')
+      params['category'] = this.filterForm.value.category;
+    if (typeof this.filterForm.value.name !== 'undefined' && this.filterForm.value.name !== '')
+      params['name'] = this.filterForm.value.name;
+    // sort: this.filterForm.value.sort,
+    // order: this.filterForm.value.order
+    this.router.navigate(['products'], {queryParams: params});
   }
 
   getCategories(): void {
@@ -43,7 +45,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   searchByName(nameStr: string) {
-    this.router.navigate(['/products'], { queryParams: { name: nameStr } });
+    this.router.navigate(['/products'], {queryParams: {name: nameStr}});
   }
 
 }
