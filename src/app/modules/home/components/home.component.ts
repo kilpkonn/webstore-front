@@ -38,6 +38,10 @@ export class HomeComponent implements OnInit {
       .subscribe(news => this.news = news);
   }
 
+  getSortedNews() {
+    return this.news.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+  }
+
   removeNews(news: News) {
     this.newsService.deleteNews(news.id)
       .subscribe(data => {
