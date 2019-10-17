@@ -12,7 +12,7 @@
       <mat-label>Search by name</mat-label>
       <input matInput type="text" formControlName="name">
     </mat-form-field>
-    <!--<mat-form-field>
+    <mat-form-field>
       <mat-label>Sort</mat-label>
       <mat-select formControlName="sort">
         <mat-option value="">Name</mat-option>
@@ -24,9 +24,9 @@
       <mat-label>Order</mat-label>
       <mat-select formControlName="order">
         <mat-option value="">Ascending</mat-option>
-        <mat-option value="-1">Descending</mat-option>
+        <mat-option value="reverse">Descending</mat-option>
       </mat-select>
-    </mat-form-field>-->
+    </mat-form-field>
     <button mat-button type="submit" [disabled]="!filterForm.valid">Search</button>
   </form>
   </mat-toolbar-row>
