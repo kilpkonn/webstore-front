@@ -6,7 +6,7 @@
       <a mat-button [routerLink]="'./new'">New</a>
     </div>
     <ul *ngIf="news && show" [@listAnimation]="news.length">
-      <li *ngFor="let news_component of news">
+      <li *ngFor="let news_component of getSortedNews()">
         <delete-button (click)="removeNews(news_component)"></delete-button>
         <news-component [news]="news_component"></news-component>
       </li>
