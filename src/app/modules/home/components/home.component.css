@@ -10,3 +10,14 @@ li {
 li:hover {
   transform: scale(1.02);
 }
+
+a {
+  position: absolute;
+  right: 0;
+  margin: 1em;
+  transition: 1s;
+}
+
+a:hover {
+  color: #217626;
+}

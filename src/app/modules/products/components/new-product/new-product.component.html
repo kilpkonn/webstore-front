@@ -3,7 +3,7 @@
   <div fxLayout="column" fxFlex="70">
     <div [hidden]="submitted">
       <h2>Create new product</h2>
-      <form #productForm (ngSubmit)="onSubmit()" fxLayout="column">
+      <form #newProductForm (ngSubmit)="onSubmit()" fxLayout="column">
 
         <div fxLayout="row">
           <mat-form-field>
@@ -43,7 +43,7 @@
 
     <div [hidden]="!submitted">
       <h4>You submitted successfully!</h4>
-      <button mat-raised-button (click)="newProduct(); productForm.reset()">New product</button>
+      <button mat-raised-button (click)="newProduct(); newProductForm.reset()">New product</button>
     </div>
   </div>
   <div fxFlex="15"></div>

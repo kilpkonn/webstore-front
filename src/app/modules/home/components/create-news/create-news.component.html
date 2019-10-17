@@ -1,0 +1,31 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <div fxFlex="15"></div>
+  <div fxLayout="column" fxFlex="70">
+    <div [hidden]="submitted">
+      <h2>Create news</h2>
+      <form #newNewsForm (ngSubmit)="onSubmit()" fxLayout="column">
+
+        <mat-form-field>
+          <mat-label>Headline</mat-label>
+          <input matNativeControl type="text" id="headline" required [(ngModel)]="news.headline" name="headline">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Content</mat-label>
+          <textarea matNativeControl type="text" id="content" required [(ngModel)]="news.content"
+                    name="content"></textarea>
+        </mat-form-field>
+
+        <div fxLayoutAlign="center center">
+          <button mat-raised-button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div [hidden]="!submitted">
+      <h4>News created successfully!</h4>
+      <button mat-raised-button (click)="newNews(); newNewsForm.reset()">Create more</button>
+    </div>
+  </div>
+  <div fxFlex="15"></div>
+</div>

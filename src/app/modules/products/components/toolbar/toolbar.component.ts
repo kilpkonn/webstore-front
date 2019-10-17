@@ -17,7 +17,7 @@ export class ToolbarComponent implements OnInit {
     name: new FormControl(''),
     sort: new FormControl(''),
     order: new FormControl('')
-  })
+  });
 
   constructor(private http: HttpClient,
               private categoryService: CategoryService,

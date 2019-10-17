@@ -1,8 +1,3 @@
-.mat-toolbar-row, .mat-toolbar {
-  background-color: #414444;
-  color: white;
-}
-
 a {
   text-decoration: none;
   font-size: 1.1em;
@@ -17,4 +12,9 @@ a:active {
 
 h1 {
   font-size: 1.3em;
+}
+
+.mat-toolbar-row, .mat-toolbar {
+  background-color: #414444;
+  color: #efefef;
 }
