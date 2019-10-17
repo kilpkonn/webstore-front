@@ -26,12 +26,18 @@ export class ToolbarComponent implements OnInit {
 
   onSubmit() {
     let params = {};
-    if (typeof this.filterForm.value.category !== 'undefined' && this.filterForm.value.category !== '')
+    if (typeof this.filterForm.value.category !== 'undefined' && this.filterForm.value.category !== '') {
       params['category'] = this.filterForm.value.category;
-    if (typeof this.filterForm.value.name !== 'undefined' && this.filterForm.value.name !== '')
+    }
+    if (typeof this.filterForm.value.name !== 'undefined' && this.filterForm.value.name !== '') {
       params['name'] = this.filterForm.value.name;
-    // sort: this.filterForm.value.sort,
-    // order: this.filterForm.value.order
+    }
+    if (typeof this.filterForm.value.sort !== 'undefined' && this.filterForm.value.sort !== '') {
+      params['sort'] = this.filterForm.value.sort;
+    }
+    if (typeof this.filterForm.value.order !== 'undefined' && this.filterForm.value.order !== '') {
+      params['order'] = this.filterForm.value.order;
+    }
     this.router.navigate(['products'], {queryParams: params});
   }
 

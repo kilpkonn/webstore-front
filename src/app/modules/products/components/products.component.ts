@@ -19,8 +19,16 @@ import { slider } from '../../../shared/animations/route-animations';
 export class ProductsComponent implements OnInit {
   show = false;
   products: Product[];
-  private sortFunc = function(a: Product, b: Product) {
-    return a.id - b.id;
+  private sortFunc = function sortFunct(a: Product, b: Product, sort: string, order: string) {
+    let value = 0;
+    if (sort === undefined || sort === '') {
+      value = a.name < b.name ? -1 : 1;
+    } else if (sort === 'price') {
+      value = a.price - b.price;
+    } else if (sort === 'amount') {
+      value = a.amount - b.amount;
+    }
+    return order !== undefined && order === 'reverse' ? -value : value;
   };
 
   constructor(private route: ActivatedRoute,
@@ -33,7 +41,7 @@ export class ProductsComponent implements OnInit {
   private getProducts() {
     this.route.queryParams.subscribe(queryParams => {
       this.productService.getFilteredProducts(queryParams)
-        .subscribe(products => this.products = products.sort((a, b) => this.sortFunc(a, b)));
+        .subscribe(products => this.products = products.sort((a, b) => this.sortFunc(a, b, queryParams.sort, queryParams.order)));
     });
   }
 
