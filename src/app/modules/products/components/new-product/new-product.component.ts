@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../../../shared/models/product';
 import { Category } from '../../../../shared/models/category';
@@ -37,7 +36,18 @@ export class NewProductComponent implements OnInit {
   }
 
   onSubmit() {
+    if (!this.isValidProduct(this.product)) {
+      // TODO: Display error
+      return;
+    }
     this.submitted = true;
     this.save();
+  }
+
+  private isValidProduct(product: Product) {
+    return product.name !== 'undefined'
+      && this.categories.indexOf(product.category) >= 0
+      && product.amount > 0
+      && product.price > 0;
   }
 }
