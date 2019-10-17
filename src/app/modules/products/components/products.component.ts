@@ -35,7 +35,7 @@ export class ProductsComponent implements OnInit {
   }
 
   onAnimationFinished() {
-    this.show = true;
+    setTimeout(() => this.show = true, 200);
   }
 
   removeProduct(product: Product) {
