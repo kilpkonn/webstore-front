@@ -1,7 +1,10 @@
 <div fxLayout="row" fxLayoutAlign="center">
   <div fxFlex="15"></div>
   <div fxFlex="70" fxLayout="column" fxLayoutAlign="flex-start">
-    <h2 fxFlexAlign="center">Welcome to my webstore!</h2>
+    <div fxLayout="row" fxLayoutAlign="center">
+      <h2 fxFlexAlign="center">Welcome to my webstore!</h2>
+      <a mat-button [routerLink]="'./new'">New</a>
+    </div>
     <ul *ngIf="news && show" [@listAnimation]="news.length">
       <li *ngFor="let news_component of news">
         <delete-button (click)="removeNews(news_component)"></delete-button>

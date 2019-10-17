@@ -45,7 +45,7 @@ export class NewProductComponent implements OnInit {
   }
 
   private isValidProduct(product: Product) {
-    return product.name !== 'undefined'
+    return typeof product.name !== 'undefined'
       && this.categories.indexOf(product.category) >= 0
       && product.amount > 0
       && product.price > 0;
