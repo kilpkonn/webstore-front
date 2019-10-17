@@ -19,6 +19,9 @@ import { slider } from '../../../shared/animations/route-animations';
 export class ProductsComponent implements OnInit {
   show = false;
   products: Product[];
+  private sortFunc = function(a: Product, b: Product) {
+    return a.id - b.id;
+  };
 
   constructor(private route: ActivatedRoute,
               private productService: ProductService) { }
@@ -30,7 +33,7 @@ export class ProductsComponent implements OnInit {
   private getProducts() {
     this.route.queryParams.subscribe(queryParams => {
       this.productService.getFilteredProducts(queryParams)
-        .subscribe(products => this.products = products);
+        .subscribe(products => this.products = products.sort((a, b) => this.sortFunc(a, b)));
     });
   }
 
@@ -44,6 +47,10 @@ export class ProductsComponent implements OnInit {
         this.products.splice(this.products.indexOf(product), 1);
         // Verify by pulling new products?
       }, error => console.log(error));
+  }
+
+  trackElement(index: number, element: any) {
+    return element ? element.id : null
   }
 
 }
