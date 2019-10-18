@@ -24,5 +24,4 @@ ng serve
 ```
 You can find frontend at `localhost:4200`
 
-### Analysis
-Analysis can be found in [analysis.md](analysis.md) (backend repo)
+Analysis can be found in backend repo
