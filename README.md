@@ -9,7 +9,6 @@ An Angular frontend for a webstore created for ITI0203 course.
 __Make sure you have:__
 - [x] Node.js (latest)
 - [x] npm
-- [x] Java 11 or newer
 
 cd to project root <br />
 
