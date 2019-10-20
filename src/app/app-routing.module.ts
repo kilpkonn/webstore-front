@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'error',
     loadChildren: () => import('./modules/error/error.module').then(m => m.ErrorModule)
   },
+  {
+    path: 'admin',
+    loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
+  },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
