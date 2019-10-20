@@ -26,8 +26,6 @@ export class LoginComponent implements OnInit {
       // TODO: Display error
       return;
     }
-
-    // TODO: Encrypt password
     this.submitted = true;
     this.postLogin();
   }

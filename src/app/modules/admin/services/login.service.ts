@@ -12,4 +12,9 @@ export class LoginService {
   login(credentials: LoginCredentials): Observable<any> {
     return; // TODO: send login request
   }
+
+  logOut(): Observable<any> {
+    return;  // TODO: logout
+  }
+
 }
