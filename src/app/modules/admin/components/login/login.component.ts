@@ -8,8 +8,8 @@ import { LoginService } from '../../services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private credentials = new LoginCredentials();
-  private submitted = false;
+  public credentials = new LoginCredentials();
+  public submitted = false;
 
   constructor(private loginService: LoginService) { }
 
