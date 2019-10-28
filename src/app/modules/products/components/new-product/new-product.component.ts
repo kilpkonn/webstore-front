@@ -10,8 +10,8 @@ import { CategoryService } from '../../services/category.service';
   styleUrls: ['./new-product.component.css']
 })
 export class NewProductComponent implements OnInit {
-  private submitted: boolean;
-  private product = new Product();
+  public submitted: boolean;
+  public product = new Product();
   categories: Category[];
 
   constructor(private productService: ProductService,

@@ -8,8 +8,8 @@ import { NewsService } from "../../services/news.service";
   styleUrls: ['./create-news.component.css']
 })
 export class CreateNewsComponent implements OnInit {
-  private submitted = false;
-  private news = new News();
+  public submitted = false;
+  public news = new News();
 
   constructor(private newsService: NewsService) {
   }
