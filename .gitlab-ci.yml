@@ -17,7 +17,7 @@ build webstore:
     api: localhost/api
   script:
     - yarn install
-    - yarn run build
+    - node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod
 
 deploy webstore:
   stage: deploy
