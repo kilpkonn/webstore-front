@@ -21,6 +21,8 @@ echo "Starting new container: $APP_CONTAINER_NAME"
 docker run \
    --name "$APP_CONTAINER_NAME" \
    -p 80:80 \
+   -p 443:443 \
+   -v /etc/letsencrypt/:/etc/letsencrypt/ \
    --network="proxy-network" \
    --restart=always \
    -d "$CI_REGISTRY_USER"/"$CI_REGISTRY_REPOSITORY":"$CI_COMMIT_SHORT_SHA"
@@ -30,5 +32,5 @@ docker container ls -a -s
 echo "Removing old images"
 docker image ls
 # shellcheck disable=SC2046
-docker system prune
+yes | docker system prune
 docker image ls
