@@ -32,5 +32,6 @@ docker container ls -a -s
 echo "Removing old images"
 docker image ls
 # shellcheck disable=SC2046
-yes | docker system prune
+docker rmi $(docker images | grep "$CI_REGISTRY_USER"/"$CI_REGISTRY_REPOSITORY" | awk '{print $3}')
+yes | docker system prune # Needed for unnamed images / containers / etc
 docker image ls
