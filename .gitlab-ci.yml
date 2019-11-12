@@ -1,6 +1,11 @@
 stages:
   - build
+  - package
   - deploy
+
+before_script:
+  - export APP_CONTAINER_NAME=webstore-front-container
+  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_TOKEN
 
 build webstore:
   stage: build
@@ -19,11 +24,18 @@ build webstore:
     - yarn install
     - node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod
 
+package webstore:
+  stage: package
+  tags:
+    - webstore
+  script:
+    - docker build -t $CI_REGISTRY_USER/$CI_REGISTRY_REPOSITORY:$CI_COMMIT_SHORT_SHA .
+    - docker push $CI_REGISTRY_USER/$CI_REGISTRY_REPOSITORY
+
+
 deploy webstore:
   stage: deploy
   tags:
     - webstore
   script:
-    - mkdir -p ~/front-deployment
-    - rm -rf ~/front-deployment/*
-    - cp -r dist/frontend/. ~/front-deployment
+    - bash ./scripts/deploy.sh
