@@ -21,7 +21,6 @@ echo "Starting new container: $APP_CONTAINER_NAME"
 docker run \
    --name "$APP_CONTAINER_NAME" \
    -p 80:80 \
-   -p 443:443 \
    -v /etc/letsencrypt/:/etc/letsencrypt/ \
    --network="proxy-network" \
    --restart=always \

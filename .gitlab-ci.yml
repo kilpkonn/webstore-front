@@ -22,7 +22,7 @@ build webstore:
     api: localhost/api
   script:
     - yarn install
-    - node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod --no-aot --build-optimizer false
+    - node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod
 
 package webstore:
   stage: package
