@@ -14,15 +14,16 @@ echo "Removing $APP_CONTAINER_NAME-old"
 docker rm "$APP_CONTAINER_NAME-old" || true
 docker container ls -a -s
 
-echo "Creating network bridge for proxy (if none exsists)"
-docker network create --driver bridge proxy-network || true # Create only if none exists
+echo "Creating internal network bridge for proxy-back-database (if none exsists)"
+docker network create --driver bridge api-internal-network || true # Create only if none exists
 
 echo "Starting new container: $APP_CONTAINER_NAME"
 docker run \
    --name "$APP_CONTAINER_NAME" \
    -p 80:80 \
+   -p 443:443 \
    -v /etc/letsencrypt/:/etc/letsencrypt/ \
-   --network="proxy-network" \
+   --network="api-internal-network" \
    --restart=always \
    -d "$CI_REGISTRY_USER"/"$CI_REGISTRY_REPOSITORY":"$CI_COMMIT_SHORT_SHA"
 
