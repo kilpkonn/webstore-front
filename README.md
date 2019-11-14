@@ -1,14 +1,18 @@
 # iti0203-2019-project (team 06)
 
-### Description
+[![pipeline status](https://gitlab.cs.ttu.ee/tajoot/iti0203-2019-project-front/badges/master/pipeline.svg)](https://gitlab.cs.ttu.ee/tajoot/iti0203-2019-project-front/commits/master)
+
+## Description
 
 An Angular frontend for a webstore created for ITI0203 course.
 
-### How to run:
+**Currently deploy to: [https://www.flowerstore.ee](https://www.flowerstore.ee)**
+
+## How to run locally:
 
 __Make sure you have:__
-- [x] Node.js (latest)
-- [x] npm
+* Node.js (latest)
+* npm
 
 cd to project root <br />
 
@@ -24,4 +28,4 @@ ng serve
 ```
 You can find frontend at `localhost:4200`
 
-Analysis can be found in backend repo
+Analysis and server installation guides can be found in backend repo!
