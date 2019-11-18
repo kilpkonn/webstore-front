@@ -5,6 +5,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AppMaterialModule } from '../modules/app-material/app-material.module';
 import { DeleteButtonComponent } from './components/delete-button/delete-button.component';
+import {FlexModule} from "@angular/flex-layout";
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { DeleteButtonComponent } from './components/delete-button/delete-button.
     CommonModule,
     AppMaterialModule,
     RouterModule,
+    FlexModule,
   ]
 })
 export class SharedModule { }

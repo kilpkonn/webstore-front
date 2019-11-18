@@ -1,5 +1,5 @@
 <div fxLayout="row" fxLayoutAlign="center">
-  <div fxFlex="15"></div>
+  <div fxFlex="15" fxFlex.lt-md="5"></div>
   <div fxLayout="column" fxFlex="70">
     <div [hidden]="submitted">
       <h2>Create new product</h2>
@@ -46,5 +46,5 @@
       <button mat-raised-button (click)="newProduct(); newProductForm.reset()">New product</button>
     </div>
   </div>
-  <div fxFlex="15"></div>
+  <div fxFlex="15" fxFlex.lt-md="5"></div>
 </div>
