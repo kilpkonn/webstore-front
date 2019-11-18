@@ -1,6 +1,6 @@
 <div fxLayout="row" fxLayoutAlign="center">
-  <div fxFlex="15"></div>
-  <div fxFlex="70" fxLayout="column" fxLayoutAlign="flex-start">
+  <div fxFlex="15" fxFlex.lt-md="5"></div>
+  <div fxFlex fxLayout="column" fxLayoutAlign="flex-start">
     <div fxLayout="row" fxLayoutAlign="center">
       <h2 fxFlexAlign="center">Welcome to my webstore!</h2>
       <a mat-button [routerLink]="'./new'">New</a>
@@ -12,5 +12,5 @@
       </li>
     </ul>
   </div>
-  <div fxFlex="15"></div>
+  <div fxFlex="15" fxFlex.lt-md="5"></div>
 </div>

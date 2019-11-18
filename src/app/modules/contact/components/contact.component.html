@@ -1,6 +1,6 @@
-<div fxLayout="column">
-  <div fxFlex="90" fxLayout="row" fxLayoutAlign="center">
-    <div fxFlex="20"></div>
+<div fxFlex="20" fxFlex.lt-md="5"></div>
+<div fxFlex fxLayout="column">
+  <div fxFlex="90" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center">
     <div fxFlex class="text-container" fxLayout="column" fxLayoutAlign="center" fxFlexFill>
       <span fxFlexOffset="15%">MyWebStore OÜ</span>
       <span>Address: 123 Fake Street, Imaginary City</span>
@@ -8,8 +8,8 @@
       <span>email: trump@company.ru</span>
     </div>
     <div fxFlex class="map-container" fxLayout="column" fxLayoutAlign="center">
-      <contact-map fxFlexOffset="10"></contact-map>
+      <contact-map fxFlexOffset="15"></contact-map>
     </div>
-    <div fxFlex="20"></div>
   </div>
 </div>
+<div fxFlex="20" fxFlex.lt-md="5"></div>
