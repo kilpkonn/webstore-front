@@ -1,9 +1,10 @@
-mat-toolbar {
+div {
   font-size: 1em;
+  margin: 0;
 }
 
 mat-form-field {
-  padding-top: 1em;
+  padding-top: 0.4em;
   margin: 0 1em;
 }
 
