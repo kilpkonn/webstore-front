@@ -1,6 +1,6 @@
 <products-toolbar></products-toolbar>
 <div fxLayout="row" fxLayoutAlign="center">
-  <div fxFlex="15"></div>
+  <div fxFlex.lt-md="5" fxFlex="15" ></div>
   <div fxLayout="row" fxFlex fxLayoutAlign="center">
     <ul fxLayout="row wrap" fxLayoutAlign="center center" *ngIf="show && products" [@listAnimation]="products.length">
       <li>
@@ -12,5 +12,5 @@
       </li>
     </ul>
   </div>
-  <div fxFlex="15"></div>
+  <div fxFlex.lt-md="5" fxFlex="15" ></div>
 </div>
