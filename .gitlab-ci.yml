@@ -23,6 +23,9 @@ build webstore:
   script:
     - yarn install
     - node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod --verbose
+  only:
+    - master
+    - tags
 
 package webstore:
   stage: package
@@ -31,6 +34,9 @@ package webstore:
   script:
     - docker build -t $CI_REGISTRY_USER/$CI_REGISTRY_REPOSITORY:$CI_COMMIT_SHORT_SHA .
     - docker push $CI_REGISTRY_USER/$CI_REGISTRY_REPOSITORY
+  only:
+    - master
+    - tags
 
 
 deploy webstore:
@@ -39,3 +45,6 @@ deploy webstore:
     - webstore
   script:
     - bash ./scripts/deploy.sh
+  only:
+    - master
+    - tags
