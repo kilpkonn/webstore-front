@@ -1,9 +1,15 @@
-<div class="header" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1em">
-  <h1 [routerLink]="'/home'">Webstore</h1>
-  <div fxFlex></div>
-  <div>
-    <a mat-button [routerLink]="'/home'">Home</a>
-    <a mat-button [routerLink]="'/products'">Products</a>
-    <a mat-button [routerLink]="'/contact'">Contact</a>
+<mat-toolbar class="header" fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="1em">
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
   </div>
-</div>
+  <div>
+    <a routerLink="/home">Webstore</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <a mat-button routerLink="/home">Home</a>
+        <a mat-button routerLink="/products">Products</a>
+        <a mat-button routerLink="/contact">Contact</a>
+  </div>
+</mat-toolbar>
