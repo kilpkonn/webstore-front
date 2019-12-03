@@ -1,0 +1,21 @@
+<h2>Register</h2>
+
+<form [formGroup]="registerForm" novalidate (ngSubmit)="onSubmit()" class="example-form">
+
+  <mat-form-field class="example-full-width">
+    <label for="username">Username</label>
+    <input matInput type="text" id="username" formControlName="username"/>
+    <mat-error *ngIf="hasError('username', 'required')">Name is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <label for="password">Password</label>
+    <input matInput type="password" id="password" formControlName="password"/>
+    <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
+    <mat-error *ngIf="hasError('password', 'minlength')">Password must be at least 6 characters</mat-error>
+  </mat-form-field>
+
+  <button [disabled]="loading" mat-raised-button color="secondary">Register</button>
+  <br><br>
+  Already have an account? <a routerLink="/user/login">Log in</a>
+</form>
