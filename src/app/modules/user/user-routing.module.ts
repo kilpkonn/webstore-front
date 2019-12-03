@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from './components/register/register.component';
-import {UserComponent} from './components/user.component';
 import {LoginComponent} from './components/login/login.component';
 
 
 const routes: Routes = [
-  // {path: '', component: UserComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: '', redirectTo: '/user/login', pathMatch: 'full'},
+  {path: 'login', component: LoginComponent, data: {animation: 'isLeft'}},
+  {path: 'register', component: RegisterComponent, data: {animation: 'isRight'}}
 ];
 
 @NgModule({
