@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *ngIf="user && (user.role === 'USER' || user.role === 'ADMIN')">
   <a mat-icon-button [routerLink]="'./new'">
     <mat-icon svgIcon="add_circle"></mat-icon>
   </a>

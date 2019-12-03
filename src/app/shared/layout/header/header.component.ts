@@ -1,4 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {User} from '../../models/user';
+import {AuthenticationService} from '../../services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,13 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  user: User;
 
   @Output() public sidenavToggle = new EventEmitter();
 
-  constructor() { }
+  constructor(private authenticationService: AuthenticationService) {
+    this.user = authenticationService.currentUserValue;
+  }
 
   ngOnInit() {
   }

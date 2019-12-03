@@ -7,11 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HttpErrorInterceptor } from './shared/services/http-error.interceptor';
 
 import { AppComponent } from './app.component';
 import { AppMaterialModule } from './modules/app-material/app-material.module';
 import { SharedModule } from './shared/shared.module';
+import {JwtInterceptor} from './shared/helpers/jwt.interceptor';
+import {ErrorInterceptor} from './shared/helpers/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,11 +29,8 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpErrorInterceptor,
-      multi: true
-    }
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
