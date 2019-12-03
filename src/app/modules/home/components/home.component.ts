@@ -6,6 +6,8 @@ import { NewsService } from '../services/news.service';
 import { News } from '../../../shared/models/news';
 import { slider } from '../../../shared/animations/route-animations';
 import { listAnimation } from '../../../shared/animations/list-animations';
+import {User} from '../../../shared/models/user';
+import {AuthenticationService} from '../../../shared/services/authentication.service';
 
 @Component({
   host: {
@@ -18,16 +20,19 @@ import { listAnimation } from '../../../shared/animations/list-animations';
   animations: [slider, listAnimation]
 })
 export class HomeComponent implements OnInit {
+  user: User;
   show = false;
   news: News[];
 
   constructor(private newsService: NewsService,
               private matIconRegistry: MatIconRegistry,
-              private domSanitizer: DomSanitizer) {
+              private domSanitizer: DomSanitizer,
+              private authenticationService: AuthenticationService) {
     this.matIconRegistry.addSvgIcon(
       'add_circle',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/add_circle.svg')
     );
+    this.user = authenticationService.currentUserValue;
   }
 
   ngOnInit() {
