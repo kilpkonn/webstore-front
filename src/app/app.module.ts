@@ -13,6 +13,7 @@ import { AppMaterialModule } from './modules/app-material/app-material.module';
 import { SharedModule } from './shared/shared.module';
 import {JwtInterceptor} from './shared/helpers/jwt.interceptor';
 import {ErrorInterceptor} from './shared/helpers/error.interceptor';
+import {ConfirmationDialogComponent} from './shared/components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,10 @@ import {ErrorInterceptor} from './shared/helpers/error.interceptor';
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ConfirmationDialogComponent
+  ]
 })
 export class AppModule {
 }
