@@ -7,15 +7,17 @@ import { AppMaterialModule } from '../modules/app-material/app-material.module';
 import { DeleteButtonComponent } from './components/delete-button/delete-button.component';
 import {ExtendedModule, FlexModule} from '@angular/flex-layout';
 import { SidenavListComponent } from './layout/sidenav-list/sidenav-list.component';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, DeleteButtonComponent, SidenavListComponent],
+  declarations: [HeaderComponent, FooterComponent, DeleteButtonComponent, SidenavListComponent, ConfirmationDialogComponent],
   exports: [
     HeaderComponent,
     FooterComponent,
     DeleteButtonComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     CommonModule,
