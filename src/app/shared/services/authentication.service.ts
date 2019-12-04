@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable, Output} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
@@ -10,6 +10,8 @@ import {UserService} from '../../modules/user/services/user.service';
 export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
+
+  @Output() getUser: EventEmitter<any> = new EventEmitter();
 
   constructor(private http: HttpClient,
               private userService: UserService) {
@@ -27,6 +29,7 @@ export class AuthenticationService {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);
+        this.getUser.emit(user);
         return user;
       }));
   }
@@ -35,5 +38,6 @@ export class AuthenticationService {
     // remove user from local storage and set current user to null
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
+    this.getUser.emit(null);
   }
 }

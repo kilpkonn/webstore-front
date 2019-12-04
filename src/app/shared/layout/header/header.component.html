@@ -12,5 +12,6 @@
     <a mat-button routerLink="/products">Products</a>
     <a mat-button routerLink="/contact">Contact</a>
     <a *ngIf="!user" mat-button routerLink="/user/login">Login</a>
+    <a *ngIf="user" mat-button (click)="logout()">Logout</a>
   </div>
 </mat-toolbar>
