@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 import {
   MatToolbarModule,
@@ -30,7 +31,8 @@ import {
     MatInputModule,
     MatSelectModule,
     MatSidenavModule,
-    MatDialogModule
+    MatDialogModule,
+    MaterialFileInputModule,
   ],
   exports: [
     MatToolbarModule,
@@ -43,7 +45,8 @@ import {
     MatInputModule,
     MatSelectModule,
     MatSidenavModule,
-    MatDialogModule
+    MatDialogModule,
+    MaterialFileInputModule
   ]
 })
 export class AppMaterialModule { }

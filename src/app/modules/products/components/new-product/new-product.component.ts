@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../../../shared/models/product';
 import { Category } from '../../../../shared/models/category';
 import { CategoryService } from '../../services/category.service';
+import { FileInput } from 'ngx-material-file-input';
 
 @Component({
   selector: 'new-product',
@@ -13,6 +14,9 @@ export class NewProductComponent implements OnInit {
   public submitted: boolean;
   public product = new Product();
   categories: Category[];
+
+  readonly maxFileSize = 104857600; // 100 MB
+  private imageFile: FileInput;
 
   constructor(private productService: ProductService,
               private categoryService: CategoryService) {
@@ -48,6 +52,9 @@ export class NewProductComponent implements OnInit {
     return typeof product.name !== 'undefined'
       && this.categories.indexOf(product.category) >= 0
       && product.amount > 0
-      && product.price > 0;
+      && product.price > 0
+      && (this.imageFile.files.length === 0
+          || (this.imageFile.files.length === 0
+          && this.imageFile.files[1].size <= this.maxFileSize));
   }
 }
