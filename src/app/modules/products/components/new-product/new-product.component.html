@@ -3,7 +3,7 @@
   <div fxLayout="column" fxFlex="70" fxFlex.lt-md="90">
     <div [hidden]="submitted">
       <h2>Create new product</h2>
-      <form #newProductForm (ngSubmit)="onSubmit()" fxLayout="column">
+      <form #newProductForm (ngSubmit)="onSubmit()" fxLayout="column" enctype="multipart/form-data">
 
         <div fxLayout="row" fxLayout.lt-lg="column">
           <mat-form-field>

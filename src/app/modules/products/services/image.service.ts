@@ -12,7 +12,10 @@ export class ImageService {
 
   constructor(private http: HttpClient) { }
 
-  createProduct(image: FileInput): Observable<Object> {
+  uploadImage(image: File): Observable<Object> {
+    console.log(image);
+    const formData: FormData = new FormData();
+    formData.append('file', image, image.name);
     return this.http.post(this.uploadUrl, image);
   }
 }

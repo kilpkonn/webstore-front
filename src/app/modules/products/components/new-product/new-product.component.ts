@@ -4,6 +4,7 @@ import { Product } from '../../../../shared/models/product';
 import { Category } from '../../../../shared/models/category';
 import { CategoryService } from '../../services/category.service';
 import { FileInput } from 'ngx-material-file-input';
+import { ImageService } from '../../services/image.service';
 
 @Component({
   selector: 'new-product',
@@ -19,7 +20,8 @@ export class NewProductComponent implements OnInit {
   private imageFile: FileInput;
 
   constructor(private productService: ProductService,
-              private categoryService: CategoryService) {
+              private categoryService: CategoryService,
+              private imageService: ImageService) {
   }
 
   ngOnInit() {
@@ -34,6 +36,8 @@ export class NewProductComponent implements OnInit {
 
 
   save() {
+    this.imageService.uploadImage(this.imageFile.files[0])
+      .subscribe(data => console.log(data), error => console.log(error));
     this.productService.createProduct(this.product)
       .subscribe(data => console.log(data), error => console.log(error));
     this.product = new Product();
@@ -54,7 +58,7 @@ export class NewProductComponent implements OnInit {
       && product.amount > 0
       && product.price > 0
       && (this.imageFile.files.length === 0
-          || (this.imageFile.files.length === 0
-          && this.imageFile.files[1].size <= this.maxFileSize));
+          || (this.imageFile.files.length === 1
+          && this.imageFile.files[0].size <= this.maxFileSize));
   }
 }
