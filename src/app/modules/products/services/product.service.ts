@@ -46,11 +46,11 @@ export class ProductService {
       params: new HttpParams().set('name', name)});
   }
 
-  createProduct(product: Object): Observable<Object> {
-    return this.http.post(this.url, product);
+  createProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.url, product);
   }
 
-  updateProduct(id: number, value: any): Observable<Object> {
+  updateProduct(id: number, value: any): Observable<any> {
     return this.http.put(`${this.url}/${id}`, value);
   }
 
