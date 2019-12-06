@@ -36,6 +36,7 @@ export class NewProductComponent implements OnInit {
 
 
   save() {
+    this.product.imageUrl = this.imageFile.files[0].name;
     this.imageService.uploadImage(this.imageFile.files[0])
       .subscribe(data => console.log(data), error => console.log(error));
     this.productService.createProduct(this.product)

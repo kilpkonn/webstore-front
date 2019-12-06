@@ -16,10 +16,6 @@ export class ImageService {
     console.log(image);
     const formData: FormData = new FormData();
     formData.append('file', image);
-    return this.http.post(this.uploadUrl, formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data;boundary=' + image.size,
-      }
-    });
+    return this.http.post(this.uploadUrl, formData);
   }
 }
