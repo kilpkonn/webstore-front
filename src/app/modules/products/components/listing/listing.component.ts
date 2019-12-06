@@ -8,37 +8,12 @@ import {ProductService} from '../../services/product.service';
   styleUrls: ['./listing.component.css']
 })
 export class ListingComponent implements OnInit {
-  productImage: any;
-  isImageLoading: boolean;
 
   @Input() product: Product;
-
-  createImageFromBlob(image: Blob) {
-    const reader = new FileReader();
-    reader.addEventListener('load', () => {
-      this.productImage = reader.result;
-    }, false);
-
-    if (image) {
-      reader.readAsDataURL(image);
-    }
-  }
-
-  getImageFromService() {
-    this.isImageLoading = true;
-    this.productService.getImage(this.product.id).subscribe(data => {
-      this.createImageFromBlob(data);
-      this.isImageLoading = false;
-    }, error => {
-      this.isImageLoading = false;
-      console.log(error);
-    });
-  }
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.getImageFromService();
   }
 
 }

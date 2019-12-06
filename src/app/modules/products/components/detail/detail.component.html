@@ -7,7 +7,7 @@
   <mat-card-content fxLayout="row" fxLayout.lt-md="column">
     <mat-divider fxFlexOffset="5" fxFlexOffset.gt-md="0" fxFlex="90" fxFlex.lt-md="0"></mat-divider>
     <div fxFlex="50" fxFlexOffset.lt-md="5" fxLayoutAlign="center center">
-      <img mat-card-image [attr.src]="productImage" alt="Product Image">
+      <img mat-card-image [attr.src]="'images/' + product.imageUrl" alt="Product Image">
     </div>
     <div fxFlex="50" fxLayout="column">
       <div fxFlexOffset="10" fxFlex="60">
