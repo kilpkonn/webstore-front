@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../../../shared/models/product';
 import { Category } from '../../../../shared/models/category';
@@ -38,10 +38,12 @@ export class NewProductComponent implements OnInit {
   save() {
     this.product.imageUrl = this.imageFile.files[0].name;
     this.imageService.uploadImage(this.imageFile.files[0])
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.productService.createProduct(this.product)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.product = new Product();
+      .subscribe(data => {
+        this.product.imageUrl = data.url;
+        this.productService.createProduct(this.product)
+          .subscribe(product => console.log(product), err => console.log(err));
+        this.product = new Product();
+      }, error => console.log(error));
   }
 
   onSubmit() {
@@ -59,7 +61,7 @@ export class NewProductComponent implements OnInit {
       && product.amount > 0
       && product.price > 0
       && (this.imageFile.files.length === 0
-          || (this.imageFile.files.length === 1
+        || (this.imageFile.files.length === 1
           && this.imageFile.files[0].size <= this.maxFileSize));
   }
 }
