@@ -1,11 +1,11 @@
 <div fxLayout="row" fxLayoutAlign="center">
   <div fxFlex="15" fxFlex.lt-md="5"></div>
-  <div fxLayout="column" fxFlex="70">
+  <div fxLayout="column" fxFlex="70" fxFlex.lt-md="90">
     <div [hidden]="submitted">
       <h2>Create new product</h2>
-      <form #newProductForm (ngSubmit)="onSubmit()" fxLayout="column">
+      <form #newProductForm (ngSubmit)="onSubmit()" fxLayout="column" enctype="multipart/form-data">
 
-        <div fxLayout="row">
+        <div fxLayout="row" fxLayout.lt-lg="column">
           <mat-form-field>
             <mat-label>Name</mat-label>
             <input matNativeControl type="text" id="name" required [(ngModel)]="product.name" name="name">
@@ -16,6 +16,12 @@
             <mat-select id="category" required [(ngModel)]="product.category" name="category">
               <mat-option *ngFor="let category of categories" [value]="category">{{category.name}}</mat-option>
             </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Image</mat-label>
+            <ngx-mat-file-input id="image" placeholder="Image" [(ngModel)]="imageFile" [accept]="'.jpg,.png'" name="image"></ngx-mat-file-input>
+            <mat-icon matSuffix>folder</mat-icon>
           </mat-form-field>
 
           <mat-form-field>

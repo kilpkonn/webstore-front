@@ -3,6 +3,8 @@ import { ProductService } from '../../services/product.service';
 import { Product } from '../../../../shared/models/product';
 import { Category } from '../../../../shared/models/category';
 import { CategoryService } from '../../services/category.service';
+import { FileInput } from 'ngx-material-file-input';
+import { ImageService } from '../../services/image.service';
 
 @Component({
   selector: 'new-product',
@@ -14,8 +16,12 @@ export class NewProductComponent implements OnInit {
   public product = new Product();
   categories: Category[];
 
+  readonly maxFileSize = 104857600; // 100 MB
+  private imageFile: FileInput;
+
   constructor(private productService: ProductService,
-              private categoryService: CategoryService) {
+              private categoryService: CategoryService,
+              private imageService: ImageService) {
   }
 
   ngOnInit() {
@@ -30,9 +36,14 @@ export class NewProductComponent implements OnInit {
 
 
   save() {
-    this.productService.createProduct(this.product)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.product = new Product();
+    this.product.imageUrl = this.imageFile.files[0].name;
+    this.imageService.uploadImage(this.imageFile.files[0])
+      .subscribe(data => {
+        this.product.imageUrl = data.url;
+        this.productService.createProduct(this.product)
+          .subscribe(product => console.log(product), err => console.log(err));
+        this.product = new Product();
+      }, error => console.log(error));
   }
 
   onSubmit() {
@@ -48,6 +59,9 @@ export class NewProductComponent implements OnInit {
     return typeof product.name !== 'undefined'
       && this.categories.indexOf(product.category) >= 0
       && product.amount > 0
-      && product.price > 0;
+      && product.price > 0
+      && (this.imageFile.files.length === 0
+        || (this.imageFile.files.length === 1
+          && this.imageFile.files[0].size <= this.maxFileSize));
   }
 }

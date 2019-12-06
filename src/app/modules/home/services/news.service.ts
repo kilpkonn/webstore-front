@@ -21,7 +21,7 @@ export class NewsService {
     return this.http.delete(`${this.url}/${id}`);  // TODO: maybe handle response
   }
 
-  createNews(news: Object): Observable<Object> {
-    return this.http.post(this.url, news);
+  createNews(news: News): Observable<News> {
+    return this.http.post<News>(this.url, news);
   }
 }
