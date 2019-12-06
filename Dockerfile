@@ -8,4 +8,6 @@ RUN rm -rf /usr/share/nginx/html
 ## From ‘builder’ stage copy over the artifacts in dist folder to default nginx public folde
 COPY dist/frontend /usr/share/nginx/html
 
+VOLUME /usr/share/nginx/html/images
+
 CMD ["nginx", "-g", "daemon off;"]
