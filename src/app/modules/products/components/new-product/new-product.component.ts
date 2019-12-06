@@ -17,7 +17,7 @@ export class NewProductComponent implements OnInit {
   categories: Category[];
 
   readonly maxFileSize = 104857600; // 100 MB
-  private imageFile: FileInput;
+  public imageFile: FileInput;
 
   constructor(private productService: ProductService,
               private categoryService: CategoryService,
