@@ -14,6 +14,7 @@ mat-card-actions a {
 }
 
 img, img.mat-card-image {
+  display: block;
   width: fit-content;
   max-width: 100%;
   object-fit: contain;
@@ -23,4 +24,10 @@ img, img.mat-card-image {
 
 div {
   margin: 0.5em;
+}
+
+@media only screen and (max-width: 600px) {
+  mat-card {
+    width: 80%;
+  }
 }
