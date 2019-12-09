@@ -7,18 +7,20 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppMaterialModule } from '../app-material/app-material.module';
 import {UserRoutingModule} from './user-routing.module';
 import {FlexModule} from '@angular/flex-layout';
+import {MatTableModule} from "@angular/material/table";
 
 
 
 @NgModule({
   declarations: [RegisterComponent, UserComponent, LoginComponent],
-    imports: [
-        CommonModule,
-        UserRoutingModule,
-        ReactiveFormsModule,
-        FormsModule,
-        AppMaterialModule,
-        FlexModule
-    ]
+  imports: [
+    CommonModule,
+    UserRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AppMaterialModule,
+    FlexModule,
+    MatTableModule
+  ]
 })
 export class UserModule { }
