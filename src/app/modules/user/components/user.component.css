@@ -1,12 +1,3 @@
-mat-card {
-  margin: 0.5em;
-  max-height: 14em;
-  min-width: 11em;
-  max-width: 12em;
-  overflow-wrap: break-word;
-  display: inline-block;
-}
-mat-card-content {
-  margin: 0 0.5em;
-  padding: 0;
+table {
+  width: 100%;
 }
