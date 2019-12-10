@@ -6,7 +6,13 @@ import {User} from '../../../shared/models/user';
 
 @Injectable({providedIn: 'root'})
 export class UserService {
+  private url = 'api/users';
+
   constructor(private http: HttpClient) {
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.url);
   }
 
   register(user: User): Observable<User> {
@@ -15,5 +21,9 @@ export class UserService {
 
   login(user: User): Observable<User> {
     return this.http.post<User>(`/api/users/login`, user);
+  }
+
+  changeRole(user: User): Observable<User> {
+    return this.http.put<User>("/api/users/role", user);
   }
 }
