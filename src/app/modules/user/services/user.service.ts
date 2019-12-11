@@ -24,6 +24,10 @@ export class UserService {
   }
 
   changeRole(user: User): Observable<User> {
-    return this.http.put<User>("/api/users/role", user);
+    return this.http.put<User>('/api/users/role', user);
+  }
+
+  deleteUser(id: number): Observable<any> {
+    return this.http.delete(`${this.url}/${id}`);
   }
 }
