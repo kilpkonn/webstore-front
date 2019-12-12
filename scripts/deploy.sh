@@ -25,28 +25,39 @@ export IPurple='\033[0;95m'      # Purple
 export ICyan='\033[0;96m'        # Cyan
 export IWhite='\033[0;97m'       # White
 
-echo -e "${ICyan}Copying placeholder.jpg to ~/images...${IRed}"
+# Bold High Intensity
+export BIBlack='\033[1;90m'      # Black
+export BIRed='\033[1;91m'        # Red
+export BIGreen='\033[1;92m'      # Green
+export BIYellow='\033[1;93m'     # Yellow
+export BIBlue='\033[1;94m'       # Blue
+export BIPurple='\033[1;95m'     # Purple
+export BICyan='\033[1;96m'       # Cyan
+export BIWhite='\033[1;97m'      # White
+
+echo -e "${BICyan}Copying placeholder.jpg to ~/images...${IRed}"
 sudo cp images/placeholder.jpg ~/images
 
-echo -e "${ICyan}Pulling image ${IBlue}"
+echo -e "${BICyan}Pulling image ${Blue}"
 docker pull "$CI_REGISTRY_USER"/"$CI_REGISTRY_REPOSITORY":"$CI_COMMIT_SHORT_SHA"
 
-echo -e "${ICyan}Moving container${IYellow} $APP_CONTAINER_NAME ${Cyan}to ${IYellow}$APP_CONTAINER_NAME-old ${Color_Off}"
+echo -e "${BICyan}Moving container${IYellow} $APP_CONTAINER_NAME ${Cyan}to ${IYellow}$APP_CONTAINER_NAME-old ${Color_Off}"
 docker rename "$APP_CONTAINER_NAME" "$APP_CONTAINER_NAME-old"
 
 # TODO: use different ports etc for rolling upgrade
-echo -e "${ICyan}Stopping container $APP_CONTAINER_NAME-old${Yellow}"
+echo -e "${BICyan}Stopping container ${IBlue}$APP_CONTAINER_NAME-old${Yellow}"
 docker container ls -a -s
 docker stop "$APP_CONTAINER_NAME-old" || true
 
-echo -e "${ICyan}Removing $APP_CONTAINER_NAME-old${Purple}"
+echo -e "${BICyan}Removing ${IBlue}$APP_CONTAINER_NAME-old${Purple}"
 docker rm "$APP_CONTAINER_NAME-old" || true
+echo -e "${Green}"
 docker container ls -a -s
 
-echo -e "${ICyan}Creating internal network bridge for proxy-back-database (if none exsists)${IRed}"
+echo -e "${BICyan}Creating internal network bridge for proxy-back-database (if none exsists)${IRed}"
 docker network create --driver bridge api-internal-network || true # Create only if none exists
 
-echo -e "${ICyan}Starting new container: $APP_CONTAINER_NAME${IPurple}"
+echo -e "${BICyan}Starting new container: ${IBlue}$APP_CONTAINER_NAME${IPurple}"
 docker run \
    --name "$APP_CONTAINER_NAME" \
    -p 80:80 \
@@ -61,7 +72,7 @@ echo -e "${Green}"
 docker container ls -a -s
 echo -e "${Color_Off}"
 
-echo -e "${Cyan}Removing old images${Yellow}"
+echo -e "${BCyan}Removing old images${Yellow}"
 docker image ls
 echo -e "${Purple}"
 docker system prune -a -f # Needed for unnamed images / containers / etc
