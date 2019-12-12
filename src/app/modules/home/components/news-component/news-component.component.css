@@ -1,6 +1,6 @@
 mat-card {
   display: block;
-  width: calc(100% - 3em);
+  /*width: calc(100% - 3em);*/
   margin: 1em;
   overflow-wrap: break-word;
 }
