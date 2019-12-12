@@ -1,26 +1,26 @@
 #!/bin/bash
 
-echo "${Red}Copying placeholder.jpg to ~/images...${Color_Off}"
-echo '' | sudo -S cp images/placeholder.jpg ~/images
+echo -e "${Cyan}Copying placeholder.jpg to ~/images...${Color_Off}"
+sudo cp images/placeholder.jpg ~/images
 
-echo "${Cyan}Pulling image"
+echo -e "${Cyan}Pulling image ${Color_Off}"
 docker pull "$CI_REGISTRY_USER"/"$CI_REGISTRY_REPOSITORY":"$CI_COMMIT_SHORT_SHA"
 
-echo "Moving container $APP_CONTAINER_NAME to $APP_CONTAINER_NAME-old"
+echo -e "${Cyan}Moving container${Yellow} $APP_CONTAINER_NAME ${Cyan}to ${Yellow}$APP_CONTAINER_NAME-old ${Color_Off}"
 docker rename "$APP_CONTAINER_NAME" "$APP_CONTAINER_NAME-old"
 
 # TODO: use different ports etc for rolling upgrade
-echo "Stopping container $APP_CONTAINER_NAME-old"
+echo -e "${Cyan}Stopping container $APP_CONTAINER_NAME-old${Color_Off}"
 docker container ls -a -s
 docker stop "$APP_CONTAINER_NAME-old" || true
-echo "Removing $APP_CONTAINER_NAME-old"
+echo -e "${Cyan}Removing $APP_CONTAINER_NAME-old${Color_Off}"
 docker rm "$APP_CONTAINER_NAME-old" || true
 docker container ls -a -s
 
-echo "Creating internal network bridge for proxy-back-database (if none exsists)"
+echo -e "${Cyan}Creating internal network bridge for proxy-back-database (if none exsists)${Color_Off}"
 docker network create --driver bridge api-internal-network || true # Create only if none exists
 
-echo "Starting new container: $APP_CONTAINER_NAME"
+echo -e "${Cyan}Starting new container: $APP_CONTAINER_NAME${Color_Off}"
 docker run \
    --name "$APP_CONTAINER_NAME" \
    -p 80:80 \
@@ -33,9 +33,9 @@ docker run \
 
 docker container ls -a -s
 
-echo "Removing old images"
+echo -e "${Cyan}Removing old images${Color_Off}"
 docker image ls
-# shellcheck disable=SC2046
-# docker rmi $(docker images | grep "$CI_REGISTRY_USER"/"$CI_REGISTRY_REPOSITORY" | awk '{print $3}')
+echo -e "${Purple}"
 docker system prune -a -f # Needed for unnamed images / containers / etc
+echo -e "${Color_Off}"
 docker image ls
