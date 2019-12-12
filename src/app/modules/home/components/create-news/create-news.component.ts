@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { News } from "../../../../shared/models/news";
-import { NewsService } from "../../services/news.service";
+import { News } from '../../../../shared/models/news';
+import { NewsService } from '../../services/news.service';
+import { FileInput } from 'ngx-material-file-input';
+import { ImageService } from '../../../products/services/image.service';
 
 @Component({
   selector: 'create-news',
@@ -11,7 +13,11 @@ export class CreateNewsComponent implements OnInit {
   public submitted = false;
   public news = new News();
 
-  constructor(private newsService: NewsService) {
+  readonly maxFileSize = 104857600; // 100 MB
+  public imageFile: FileInput;
+
+  constructor(private newsService: NewsService,
+              private imageService: ImageService) {
   }
 
   ngOnInit() {
@@ -23,9 +29,13 @@ export class CreateNewsComponent implements OnInit {
   }
 
   save() {
-    this.newsService.createNews(this.news)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.news = new News();
+    this.imageService.uploadImage(this.imageFile.files[0])
+      .subscribe(data => {
+        this.news.imageUrl = data.url;
+        this.newsService.createNews(this.news)
+          .subscribe(news => console.log(news), err => console.log(err));
+        this.news = new News();
+      }, error => console.log(error));
   }
 
   onSubmit() {
@@ -42,5 +52,8 @@ export class CreateNewsComponent implements OnInit {
       && news.headline !== ''
       && typeof news.content !== 'undefined'
       && news.content !== ''
+      && (this.imageFile.files.length === 0
+        || (this.imageFile.files.length === 1
+          && this.imageFile.files[0].size <= this.maxFileSize));
   }
 }
