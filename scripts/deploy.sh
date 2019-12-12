@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "${Red}Copying placeholder.jpg to ~/images...${Color_Off}"
-sudo cp images/placeholder.jpg ~/images
+echo '' | sudo -S cp images/placeholder.jpg ~/images
 
 echo "${Cyan}Pulling image"
 docker pull "$CI_REGISTRY_USER"/"$CI_REGISTRY_REPOSITORY":"$CI_COMMIT_SHORT_SHA"

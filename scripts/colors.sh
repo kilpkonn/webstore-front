@@ -4,17 +4,19 @@ export TERM=xterm-256color
 echo $TERM
 
 # Reset
-Color_Off='\033[0m'       # Text Reset
+export Color_Off='\033[0m'       # Text Reset
 
 # Regular Colors
-Black='\033[0;30m'        # Black
-Red='\033[0;31m'          # Red
-Green='\033[0;32m'        # Green
-Yellow='\033[0;33m'       # Yellow
-Blue='\033[0;34m'         # Blue
-Purple='\033[0;35m'       # Purple
-Cyan='\033[0;36m'         # Cyan
-White='\033[0;37m'        # White
+export Black='\033[0;30m'        # Black
+export Red='\033[0;31m'          # Red
+export Green='\033[0;32m'        # Green
+export Yellow='\033[0;33m'       # Yellow
+export Blue='\033[0;34m'         # Blue
+export Purple='\033[0;35m'       # Purple
+export Cyan='\033[0;36m'         # Cyan
+export White='\033[0;37m'        # White
+
+echo -e ${Red}abc${Color_Off}
 
 # Bold
 BBlack='\033[1;30m'       # Black
