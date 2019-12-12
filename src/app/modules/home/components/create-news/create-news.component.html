@@ -1,6 +1,6 @@
 <div fxLayout="row" fxLayoutAlign="center">
   <div fxFlex="15" fxFlex.lt-sm="5"></div>
-  <div fxLayout="column">
+  <div fxFlex fxLayout="column">
     <div [hidden]="submitted">
       <h2>Create news</h2>
       <form #newNewsForm (ngSubmit)="onSubmit()" fxLayout="column">

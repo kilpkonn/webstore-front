@@ -1,5 +1,20 @@
 #!/bin/bash
 
+export TERM=xterm-256color
+echo $TERM
+
+# Reset
+export Color_Off='\033[0m'       # Text Reset
+
+# Regular Colors
+export Black='\033[0;30m'        # Black
+export Red='\033[0;31m'          # Red
+export Green='\033[0;32m'        # Green
+export Yellow='\033[0;33m'       # Yellow
+export Blue='\033[0;34m'         # Blue
+export Purple='\033[1;95m'       # Purple
+export Cyan='\033[0;36m'         # Cyan
+
 echo -e "${Cyan}Copying placeholder.jpg to ~/images...${Color_Off}"
 sudo cp images/placeholder.jpg ~/images
 
@@ -31,7 +46,9 @@ docker run \
    --restart=always \
    -d "$CI_REGISTRY_USER"/"$CI_REGISTRY_REPOSITORY":"$CI_COMMIT_SHORT_SHA"
 
+echo -e "${Green}"
 docker container ls -a -s
+echo -e "${Color_Off}"
 
 echo -e "${Cyan}Removing old images${Color_Off}"
 docker image ls

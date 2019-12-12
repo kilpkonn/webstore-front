@@ -7,7 +7,6 @@
 An Angular frontend for a webstore created for ITI0203 course.
 
 **Currently deployed to: [https://www.flowerstore.ee](https://www.flowerstore.ee)**  
-
 Public IP: [13.48.149.235](http://13.48.149.235) 
 
 ## How to run locally:
@@ -29,5 +28,8 @@ Start frontend:
 ng serve
 ```
 You can find frontend at `localhost:4200`
+
+Note that `proxy.conf.json` (in project root) is for development.  
+To change production settings edit `./nginx/angular_proxy/proxy.conf.json`!
 
 Analysis and server installation guides can be found in backend repo!

@@ -1,6 +1,6 @@
 mat-card {
   display: block;
-  /*width: calc(100% - 3em);*/
+  width: calc(100% - 3em);
   margin: 1em;
   overflow-wrap: break-word;
 }
@@ -11,6 +11,7 @@ img {
   height: fit-content;
   max-height: 50vh;
   object-fit: contain;
+  margin: 0.5em;
 }
 
 mat-card-footer {
