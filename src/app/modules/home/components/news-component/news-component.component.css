@@ -22,3 +22,7 @@ mat-card-footer {
   color: #7e7e7e;
   padding-right: 1em;
 }
+
+hr {
+  color: #989d9d;
+}
