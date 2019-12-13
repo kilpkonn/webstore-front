@@ -63,7 +63,7 @@ docker run \
    -p 80:80 \
    -p 443:443 \
    -v /etc/letsencrypt/:/etc/letsencrypt/ \
-   -v ~/images:/usr/share/deploy/html/images \
+   -v ~/images:/usr/share/nginx/html/images \
    --network="api-internal-network" \
    --restart=always \
    -d "$CI_REGISTRY_USER"/"$CI_REGISTRY_REPOSITORY":"$CI_COMMIT_SHORT_SHA"
