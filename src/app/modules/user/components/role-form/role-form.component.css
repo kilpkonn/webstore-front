@@ -5,3 +5,11 @@ form {
 mat-form-field {
   width: 8em;
 }
+
+.mat-button {
+  margin: 0.5em;
+}
+
+.mat-button:hover {
+  color: #217626;
+}
