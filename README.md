@@ -1,7 +1,6 @@
 # iti0203-2019-project (team 06)
 
-[![pipeline status](https://gitlab.cs.ttu.ee/tajoot/iti0203-2019-project-front/badges/master/pipeline.svg)](https://gitlab.cs.ttu.ee/tajoot/iti0203-2019-project-front/commits/master)
-
+[![pipeline status](https://gitlab.com/kilpkonn/webstore-front/badges/master/pipeline.svg)](https://gitlab.com/kilpkonn/webstore-front/commits/master)
 ## Description
 
 An Angular frontend for a webstore created for ITI0203 course.

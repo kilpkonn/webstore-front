@@ -35,10 +35,19 @@ export BIPurple='\033[1;95m'     # Purple
 export BICyan='\033[1;96m'       # Cyan
 export BIWhite='\033[1;97m'      # White
 
-echo -e "${BICyan}Building container... ${IBlue}"
-docker build -t "${CI_REGISTRY_USER}/${CI_REGISTRY_REPOSITORY}:${CI_COMMIT_SHORT_SHA}" .
+echo -e "${BICyan}Building container for linux/amd64... ${IBlue}"
+docker build --platform linux/amd64 -t "${CI_REGISTRY_USER}/${CI_REGISTRY_REPOSITORY}:${CI_COMMIT_SHORT_SHA}" .
 echo -e "${IGreen}Finished building container!"
 echo -e "${BICyan}Pushing container to DockerHub... ${IBlue}"
 docker push "${CI_REGISTRY_USER}/${CI_REGISTRY_REPOSITORY}"
 echo -e "${IGreen}Done uploading container!"
 echo -e "${Green}You can now pull container with: ${Yellow} docker pull ${CI_REGISTRY_USER}/${CI_REGISTRY_REPOSITORY}:${CI_COMMIT_SHORT_SHA}"
+
+echo -e "${BICyan}Removing old images${Yellow}"
+docker image ls
+echo -e "${Purple}"
+# docker system prune -a -f # Needed for unnamed images / containers / etc
+docker rmi --force $(docker images -q "$CI_REGISTRY_REPOSITORY" | uniq)
+echo -e "${Green}"
+docker image ls
+echo -e "${Color_Off}"
