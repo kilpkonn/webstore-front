@@ -47,7 +47,7 @@ echo -e "${BICyan}Removing old images${Yellow}"
 docker image ls
 echo -e "${Purple}"
 # docker system prune -a -f # Needed for unnamed images / containers / etc
-docker rmi --force $(docker images -q "$CI_REGISTRY_REPOSITORY" | uniq)
+docker rmi $(docker images -f dangling=true -q)
 echo -e "${Green}"
 docker image ls
 echo -e "${Color_Off}"
