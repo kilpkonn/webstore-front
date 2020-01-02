@@ -9,6 +9,7 @@ before_script:
 
 install_dependencies webstore:
   stage: install_dependencies
+  image: node:11-alpine
   cache:
     key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
     paths:
