@@ -5,7 +5,7 @@ COPY deploy/nginx/* /etc/nginx/conf.d/
 
 ## Remove default deploy website
 
-RUN /bin/bash -c "rm -rf /usr/share/nginx/html/*"
+SHELL ["/bin/bash", "-c", "rm -rf /usr/share/nginx/html/"]
 ## From ‘builder’ stage copy over the artifacts in dist folder to default deploy public folde
 COPY dist/frontend /usr/share/nginx/html
 
