@@ -22,7 +22,7 @@ build webstore:
   script:
     - yarn install
     - cat ./deploy/angular/proxy.conf.json > ./proxy.conf.json
-    - node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod
+    - node --max_old_space_size=3072 node_modules/@angular/cli/bin/ng build --prod
   only:
     - master
     - tags
