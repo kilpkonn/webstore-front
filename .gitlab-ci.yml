@@ -1,4 +1,5 @@
 stages:
+  - install_dependencies
   - build
   - package
   - deploy
@@ -6,12 +7,26 @@ stages:
 before_script:
   - export APP_CONTAINER_NAME=webstore-front-container
 
+install_dependencies webstore:
+  stage: install_dependencies
+  cache:
+    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+    paths:
+      - node_modules/
+  script:
+    - yarn install
+  only:
+    changes:
+      - package-lock.json
+
 build webstore:
   stage: build
   image: node:11-alpine
   cache:
+    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
     paths:
-      - node_modules
+      - node_modules/
+    policy: pull
   artifacts:
     paths:
       - dist
@@ -20,7 +35,6 @@ build webstore:
   variables:
     api: localhost/api
   script:
-    - yarn install
     - cat ./deploy/angular/proxy.conf.json > ./proxy.conf.json
     - node --max_old_space_size=3072 node_modules/@angular/cli/bin/ng build --prod
   only:
