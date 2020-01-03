@@ -19,6 +19,8 @@ install_dependencies webstore:
   script:
     - yarn install
   only:
+    - master
+    - tags
     changes:
       - package-lock.json
 
