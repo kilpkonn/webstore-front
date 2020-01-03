@@ -32,7 +32,7 @@ export class SidenavListComponent implements OnInit {
   logout() {
     this.onSidenavClose();
     this.authenticationService.logout();
-    this.router.navigate(['/user/login']);
+    this.router.navigate(['/admin/login']);
   }
 
   openConfirmationDialog() {

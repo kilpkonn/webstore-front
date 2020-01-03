@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.authenticationService.logout();
-    this.router.navigate(['/user/login']);
+    this.router.navigate(['/admin/login']);
   }
 
   openConfirmationDialog() {
