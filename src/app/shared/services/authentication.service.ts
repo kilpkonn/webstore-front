@@ -4,7 +4,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 import {User} from '../models/user';
-import {UserService} from '../../modules/user/services/user.service';
+import {UserService} from '../../modules/admin/services/user.service';
 
 @Injectable({providedIn: 'root'})
 export class AuthenticationService {
@@ -26,7 +26,7 @@ export class AuthenticationService {
   login(username, password) {
     return this.userService.login({username, password} as User)
       .pipe(map((user: User) => {
-        // store user details and jwt token in local storage to keep user logged in between page refreshes
+        // store admin details and jwt token in local storage to keep admin logged in between page refreshes
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);
         this.getUser.emit(user);
@@ -35,7 +35,7 @@ export class AuthenticationService {
   }
 
   logout() {
-    // remove user from local storage and set current user to null
+    // remove admin from local storage and set current admin to null
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
     this.getUser.emit(null);

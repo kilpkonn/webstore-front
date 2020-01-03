@@ -9,10 +9,10 @@
     <mat-icon>contacts</mat-icon><span class="nav-caption">Contact</span>
   </a>
   <mat-divider></mat-divider>
-  <a *ngIf="user" mat-list-item routerLink="/user" (click)="onSidenavClose()">
+  <a *ngIf="user" mat-list-item routerLink="/admin" (click)="onSidenavClose()">
     <mat-icon>supervised_user_circle</mat-icon><span class="nav-caption">Users</span>
   </a>
-  <a *ngIf="!user" mat-list-item routerLink="/user/login" (click)="onSidenavClose()">
+  <a *ngIf="!user" mat-list-item routerLink="/admin/login" (click)="onSidenavClose()">
     <mat-icon>account_circle</mat-icon><span class="nav-caption">Login</span>
   </a>
   <a *ngIf="user" mat-list-item (click)="openConfirmationDialog()">

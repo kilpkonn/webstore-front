@@ -5,7 +5,7 @@ import { UserComponent } from './components/user.component';
 import { LoginComponent } from './components/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppMaterialModule } from '../app-material/app-material.module';
-import {UserRoutingModule} from './user-routing.module';
+import {AdminRoutingModule} from './admin-routing.module';
 import {FlexModule} from '@angular/flex-layout';
 import {MatTableModule} from '@angular/material/table';
 import { RoleFormComponent } from './components/role-form/role-form.component';
@@ -16,7 +16,7 @@ import { RoleFormComponent } from './components/role-form/role-form.component';
   declarations: [RegisterComponent, UserComponent, LoginComponent, RoleFormComponent],
   imports: [
     CommonModule,
-    UserRoutingModule,
+    AdminRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     AppMaterialModule,
@@ -24,4 +24,4 @@ import { RoleFormComponent } from './components/role-form/role-form.component';
     MatTableModule
   ]
 })
-export class UserModule { }
+export class AdminModule { }

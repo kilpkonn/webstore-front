@@ -11,8 +11,8 @@
     <a mat-button routerLink="/home">Home</a>
     <a mat-button routerLink="/products">Products</a>
     <a mat-button routerLink="/contact">Contact</a>
-    <a *ngIf="user" mat-button routerLink="/user">Users</a>
-    <a *ngIf="!user" mat-raised-button routerLink="/user/login">Login</a>
+    <a *ngIf="user" mat-button routerLink="/admin">Users</a>
+    <!--- <a *ngIf="!user" mat-raised-button routerLink="/admin/login">Login</a> --->
     <a *ngIf="user" mat-raised-button (click)="openConfirmationDialog()">Logout</a>
   </div>
 </mat-toolbar>

@@ -46,8 +46,7 @@ echo -e "${Green}You can now pull container with: ${Yellow} docker pull ${CI_REG
 echo -e "${BICyan}Removing old images${Yellow}"
 docker image ls
 echo -e "${Purple}"
-# docker system prune -a -f # Needed for unnamed images / containers / etc
-docker rmi $(docker images -f "dangling=true" -q) # <none> images
+docker system prune -f # Needed for unnamed images / containers / etc
 docker rmi -f $(docker images "${CI_REGISTRY_USER}/${CI_REGISTRY_REPOSITORY}" -q)
 echo -e "${Green}"
 docker image ls
