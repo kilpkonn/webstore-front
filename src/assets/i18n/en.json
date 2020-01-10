@@ -5,5 +5,13 @@
     "CONTACT": "Contact",
     "USERS": "Users",
     "LOGOUT": "Logout"
+  },
+  "ADMIN": {
+    "LOGIN": "Login",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "MANDATORY": "Field is required!",
+    "REGISTER": "Register",
+    "NO_ACCOUNT": "Don't have a user yet?"
   }
 }
