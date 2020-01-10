@@ -7,11 +7,16 @@
     "LOGOUT": "Logi välja"
   },
   "ADMIN": {
-    "LOGIN": "Sisse logimine",
-    "USERNAME": "Kasutajanimi",
-    "PASSWORD": "Salasõna",
-    "MANDATORY": "Väli on kohustuslik!",
-    "REGISTER": "Registreeri siin!",
-    "NO_ACCOUNT": "Puudub kasutaja?"
+    "LOGIN": {
+      "LOGIN": "Sisse logimine",
+      "USERNAME": "Kasutajanimi",
+      "PASSWORD": "Salasõna",
+      "MANDATORY": "Väli on kohustuslik!",
+      "REGISTER": "Registreeri siin!",
+      "NO_ACCOUNT": "Puudub kasutaja?"
+    },
+    "REGISTER": {
+
+    }
   }
 }
