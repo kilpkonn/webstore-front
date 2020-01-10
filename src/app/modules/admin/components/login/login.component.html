@@ -1,23 +1,23 @@
 <div fxFlex="30" fxFlex.lt-md="5"></div>
 <div fxFlex fxLayout="column">
-<h2>Log In</h2>
+<h2>{{'ADMIN.LOGIN.LOGIN' | translate}}</h2>
 
   <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()" class="example-form">
     <mat-form-field class="example-full-width">
-      <label for="username">Username</label>
+      <label for="username">{{'ADMIN.USERNAME' | translate}}</label>
       <input matInput type="text" id="username" formControlName="username"/>
-      <mat-error *ngIf="hasError('username', 'required')">Name is required</mat-error>
+      <mat-error *ngIf="hasError('username', 'required')">{{'ADMIN.MANDATORY' | translate}}</mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <label for="password">Password</label>
+      <label for="password">{{'ADMIN.PASSWORD' | translate}}</label>
       <input matInput type="password" id="password" formControlName="password"/>
-      <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
+      <mat-error *ngIf="hasError('password', 'required')">{{'ADMIN.MANDATORY' | translate}}</mat-error>
     </mat-form-field>
 
-    <button [disabled]="loading" mat-raised-button>Login</button>
+    <button [disabled]="loading" mat-raised-button>{{'ADMIN.LOGIN.LOGIN' | translate}}</button>
     <br><br>
-    Don't have an account? <a routerLink="/admin/register">Register</a>
+    {{'ADMIN.LOGIN.NO_ACCOUNT' | translate}} <a routerLink="/admin/register">{{'ADMIN.LOGIN.REGISTER' | translate}}</a>
   </form>
 </div>
 <div fxFlex="30" fxFlex.lt-md="5"></div>

@@ -1,0 +1,31 @@
+{
+  "SAVE": "Salvesta",
+  "DELETE": "Kustuta",
+  "HEADER": {
+    "HOME": "Avaleht",
+    "PRODUCTS": "Tooted",
+    "CONTACT": "Kontakt",
+    "USERS": "Kasutajad",
+    "LOGOUT": "Logi välja"
+  },
+  "ADMIN": {
+    "USERNAME": "Kasutaja nimi",
+    "PASSWORD": "Salasõna",
+    "MANDATORY": "Väli on kohustuslik!",
+    "ROLE": "Roll",
+    "LOGIN": {
+      "LOGIN": "Logi sisse",
+      "REGISTER": "Registreeri siin!",
+      "NO_ACCOUNT": "Puudub kasutaja?"
+    },
+    "REGISTER": {
+      "REGISTER": "Registreeri kasutaja",
+      "SHORT_PASS": "Password pikkus peab olema vähemalt 6 tähemärki!",
+      "ALREADY_HAVE_ACCOUNT": "Juba omad kasutajat?",
+      "LOGIN": "Logi sisse!"
+    },
+    "USER": {
+      "ID": "Kasutaja ID"
+    }
+  }
+}

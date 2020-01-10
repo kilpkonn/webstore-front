@@ -9,6 +9,7 @@ import {AdminRoutingModule} from './admin-routing.module';
 import {FlexModule} from '@angular/flex-layout';
 import {MatTableModule} from '@angular/material/table';
 import { RoleFormComponent } from './components/role-form/role-form.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -21,7 +22,8 @@ import { RoleFormComponent } from './components/role-form/role-form.component';
     FormsModule,
     AppMaterialModule,
     FlexModule,
-    MatTableModule
+    MatTableModule,
+    TranslateModule
   ]
 })
 export class AdminModule { }
