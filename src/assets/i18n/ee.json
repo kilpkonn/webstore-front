@@ -7,16 +7,19 @@
     "LOGOUT": "Logi välja"
   },
   "ADMIN": {
+    "USERNAME": "Kasutajanimi",
+    "PASSWORD": "Salasõna",
+    "MANDATORY": "Väli on kohustuslik!",
     "LOGIN": {
       "LOGIN": "Sisse logimine",
-      "USERNAME": "Kasutajanimi",
-      "PASSWORD": "Salasõna",
-      "MANDATORY": "Väli on kohustuslik!",
       "REGISTER": "Registreeri siin!",
       "NO_ACCOUNT": "Puudub kasutaja?"
     },
     "REGISTER": {
-
+      "REGISTER": "Registreeri kasutaja",
+      "SHORT_PASS": "Password pikkus peab olema vähemalt 6 tähemärki!",
+      "ALREADY_HAVE_ACCOUNT": "Juba omad kasutajat?",
+      "LOGIN": "Logi sisse!"
     }
   }
 }

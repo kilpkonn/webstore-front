@@ -7,16 +7,19 @@
     "LOGOUT": "Logout"
   },
   "ADMIN": {
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "MANDATORY": "Field is required!",
     "LOGIN": {
       "LOGIN": "Login",
-      "USERNAME": "Username",
-      "PASSWORD": "Password",
-      "MANDATORY": "Field is required!",
       "REGISTER": "Register",
       "NO_ACCOUNT": "Don't have a user yet?"
     },
     "REGISTER": {
-
+      "REGISTER": "Register",
+      "SHORT_PASS": "Password must be at least 6 characters!",
+      "ALREADY_HAVE_ACCOUNT": "Already have an account?",
+      "LOGIN": "Log in"
     }
   }
 }
