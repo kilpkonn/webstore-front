@@ -1,9 +1,9 @@
 <form (ngSubmit)="onSubmit()">
   <mat-form-field>
-    <mat-label>Role</mat-label>
+    <mat-label>{{'ADMIN.ROLE' | translate}}</mat-label>
     <mat-select [(value)]="rowUser.role" [(ngModel)]="rowUser.role" name="role">
       <mat-option *ngFor="let role of roles" [value]="role">{{role}}</mat-option>
     </mat-select>
   </mat-form-field>
-  <button mat-button type="submit">Save</button>
+  <button mat-button type="submit">{{'SAVE' | translate}}</button>
 </form>

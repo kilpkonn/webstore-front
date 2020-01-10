@@ -1,4 +1,6 @@
 {
+  "SAVE": "Save",
+  "DELETE": "Delete",
   "HEADER": {
     "HOME": "Home",
     "PRODUCTS": "Products",
@@ -10,6 +12,7 @@
     "USERNAME": "Username",
     "PASSWORD": "Password",
     "MANDATORY": "Field is required!",
+    "ROLE": "Role",
     "LOGIN": {
       "LOGIN": "Login",
       "REGISTER": "Register",
@@ -20,6 +23,9 @@
       "SHORT_PASS": "Password must be at least 6 characters!",
       "ALREADY_HAVE_ACCOUNT": "Already have an account?",
       "LOGIN": "Log in"
+    },
+    "USER": {
+      "ID": "User ID"
     }
   }
 }
