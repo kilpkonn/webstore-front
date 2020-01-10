@@ -1,9 +1,9 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {User} from '../../models/user';
-import {AuthenticationService} from '../../services/authentication.service';
-import {Router} from '@angular/router';
-import {ConfirmationDialogComponent} from '../../components/confirmation-dialog/confirmation-dialog.component';
-import {MatDialog, MatDialogRef} from '@angular/material';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { User } from '../../models/user';
+import { AuthenticationService } from '../../services/authentication.service';
+import { Router } from '@angular/router';
+import { ConfirmationDialogComponent } from '../../components/confirmation-dialog/confirmation-dialog.component';
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-header',

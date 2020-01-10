@@ -8,11 +8,11 @@
     <h1><a routerLink="/home">Sibul OÜ</a></h1>
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-    <a mat-button routerLink="/home">Home</a>
-    <a mat-button routerLink="/products">Products</a>
-    <a mat-button routerLink="/contact">Contact</a>
-    <a *ngIf="user" mat-button routerLink="/admin">Users</a>
+    <a mat-button routerLink="/home"> {{ 'HEADER.HOME' | translate }}</a>
+    <a mat-button routerLink="/products">{{ 'HEADER.PRODUCTS' | translate }}</a>
+    <a mat-button routerLink="/contact">{{ 'HEADER.CONTACT' | translate }}</a>
+    <a *ngIf="user" mat-button routerLink="/admin">{{ 'HEADER.USERS' | translate }}</a>
     <!--- <a *ngIf="!user" mat-raised-button routerLink="/admin/login">Login</a> --->
-    <a *ngIf="user" mat-raised-button (click)="openConfirmationDialog()">Logout</a>
+    <a *ngIf="user" mat-raised-button (click)="openConfirmationDialog()">{{ 'HEADER.LOGOUT' | translate }}</a>
   </div>
 </mat-toolbar>

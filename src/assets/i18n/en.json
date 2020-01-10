@@ -1,0 +1,9 @@
+{
+  "HEADER": {
+    "HOME": "Home",
+    "PRODUCTS": "Products",
+    "CONTACT": "Contact",
+    "USERS": "Users",
+    "LOGOUT": "Logout"
+  }
+}
