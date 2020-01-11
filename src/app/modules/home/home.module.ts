@@ -9,6 +9,7 @@ import { AppMaterialModule } from '../app-material/app-material.module';
 import { NewsComponentComponent } from './components/news-component/news-component.component';
 import { SharedModule } from '../../shared/shared.module';
 import { CreateNewsComponent } from './components/create-news/create-news.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CreateNewsComponent } from './components/create-news/create-news.compon
     AppMaterialModule,
     FlexLayoutModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ]
 })
 export class HomeModule { }

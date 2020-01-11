@@ -35,5 +35,18 @@
   "ERROR": {
     "MESSAGE": "Oops... Something went wrong!",
     "TIP": "Try refreshing the page :)"
+  },
+  "HOME": {
+    "WELCOME_MESSAGE": "Welcome to my webstore!",
+    "BTN_NEW": "New",
+    "CREATE_NEWS": {
+      "TITLE": "Create news",
+      "HEADLINE": "Headline",
+      "IMAGE": "Image",
+      "CONTENT": "Content",
+      "SUBMIT": "Submit",
+      "MESSAGE_SUCCESS": "News created successfully!",
+      "CREATE_MORE": "Create more"
+    }
   }
 }

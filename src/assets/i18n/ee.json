@@ -35,5 +35,18 @@
   "ERROR": {
     "MESSAGE": "Tekkis tõrge!",
     "TIP": "Proovi lehekülge värskendada"
+  },
+  "HOME": {
+    "WELCOME_MESSAGE": "Tere tulemast!",
+    "BTN_NEW": "Lisa uudis",
+    "CREATE_NEWS": {
+      "TITLE": "Kirjuta uudis",
+      "HEADLINE": "Pealkiri",
+      "IMAGE": "Pilt",
+      "CONTENT": "Sisu",
+      "SUBMIT": "Salvesta",
+      "MESSAGE_SUCCESS": "Uudis on salvestatud!",
+      "CREATE_MORE": "Lisa veel uudiseid"
+    }
   }
 }
