@@ -31,5 +31,9 @@
   "CONTACT": {
     "ADDRESS": "Address",
     "PRODUCTION_ADDRESS": "Production"
+  },
+  "ERROR": {
+    "MESSAGE": "Oops... Something went wrong!",
+    "TIP": "Try refreshing the page :)"
   }
 }

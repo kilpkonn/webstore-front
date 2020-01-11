@@ -31,5 +31,9 @@
   "CONTACT": {
     "ADDRESS": "Juriidiline aadress",
     "PRODUCTION_ADDRESS": "Tootmine"
+  },
+  "ERROR": {
+    "MESSAGE": "Tekkis tõrge!",
+    "TIP": "Proovi lehekülge värskendada"
   }
 }
