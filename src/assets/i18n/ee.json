@@ -27,5 +27,9 @@
     "USER": {
       "ID": "Kasutaja ID"
     }
+  },
+  "CONTACT": {
+    "ADDRESS": "Juriidiline aadress",
+    "PRODUCTION_ADDRESS": "Tootmine"
   }
 }
