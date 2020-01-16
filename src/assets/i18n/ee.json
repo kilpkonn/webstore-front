@@ -27,5 +27,62 @@
     "USER": {
       "ID": "Kasutaja ID"
     }
+  },
+  "CONTACT": {
+    "ADDRESS": "Juriidiline aadress",
+    "PRODUCTION_ADDRESS": "Tootmine"
+  },
+  "ERROR": {
+    "MESSAGE": "Tekkis tõrge!",
+    "TIP": "Proovi lehekülge värskendada"
+  },
+  "HOME": {
+    "WELCOME_MESSAGE": "Tere tulemast!",
+    "BTN_NEW": "Lisa uudis",
+    "CREATE_NEWS": {
+      "TITLE": "Kirjuta uudis",
+      "HEADLINE": "Pealkiri",
+      "IMAGE": "Pilt",
+      "CONTENT": "Sisu",
+      "SUBMIT": "Salvesta",
+      "MESSAGE_SUCCESS": "Uudis on salvestatud!",
+      "CREATE_MORE": "Lisa veel uudiseid"
+    }
+  },
+  "PRODUCTS": {
+    "ADD_PRODUCT": {
+      "NEW": "Lisa"
+    },
+    "DETAIL": {
+      "CATEGORY": "Kategooria: {{category}}",
+      "PRICE": "Hind: {{price}}€",
+      "STOCK": "Kogus: {{stock}}",
+      "BACK": "Tagasi"
+    },
+    "NEW_PRODUCT": {
+      "TITLE": "Lisa toode",
+      "NAME": "Nimi",
+      "CATEGORY": "Kategooria",
+      "IMAGE": "Pilt",
+      "AMOUNT": "Kogus",
+      "PRICE": "Hind (€)",
+      "DESCRIPTION": "Kirjeldus",
+      "SUBMIT": "Salvesta",
+      "MESSAGE_SUCCESS": "Toode edukalt lisatud!",
+      "NEW": "Lisa toode"
+    },
+    "SEARCH_BAR": {
+      "CATEGORY": "Kategooria",
+      "ALL": "Kõik",
+      "BY_NAME": "Otsi nime järgi",
+      "SORT": "Sorteeri",
+      "NAME": "Nime järgi",
+      "PRICE": "Hinna järgi",
+      "AVAILABILITY": "Saadavuse järgi",
+      "ORDER": "Järjesta",
+      "ASCENDING": "Kasvavalt",
+      "DESCENDING": "Kahanevalt",
+      "SEARCH": "Otsi"
+    }
   }
 }

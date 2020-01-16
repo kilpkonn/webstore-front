@@ -27,5 +27,62 @@
     "USER": {
       "ID": "User ID"
     }
+  },
+  "CONTACT": {
+    "ADDRESS": "Address",
+    "PRODUCTION_ADDRESS": "Production"
+  },
+  "ERROR": {
+    "MESSAGE": "Oops... Something went wrong!",
+    "TIP": "Try refreshing the page :)"
+  },
+  "HOME": {
+    "WELCOME_MESSAGE": "Welcome to my webstore!",
+    "BTN_NEW": "New",
+    "CREATE_NEWS": {
+      "TITLE": "Create news",
+      "HEADLINE": "Headline",
+      "IMAGE": "Image",
+      "CONTENT": "Content",
+      "SUBMIT": "Submit",
+      "MESSAGE_SUCCESS": "News created successfully!",
+      "CREATE_MORE": "Create more"
+    }
+  },
+  "PRODUCTS": {
+    "ADD_PRODUCT": {
+      "NEW": "New"
+    },
+    "DETAIL": {
+      "CATEGORY": "Category: {{category}}",
+      "PRICE": "Price: {{price}}€",
+      "STOCK": "Stock: {{stock}}",
+      "BACK": "Back"
+    },
+    "NEW_PRODUCT": {
+      "TITLE": "Create new product",
+      "NAME": "Name",
+      "CATEGORY": "Category",
+      "IMAGE": "Image",
+      "AMOUNT": "Amount",
+      "PRICE": "Price (€)",
+      "DESCRIPTION": "Description",
+      "SUBMIT": "Submit",
+      "MESSAGE_SUCCESS": "You submitted successfully!",
+      "NEW": "New product"
+    },
+    "SEARCH_BAR": {
+      "CATEGORY": "Category",
+      "ALL": "All",
+      "BY_NAME": "Search by name",
+      "SORT": "Sort",
+      "NAME": "Name",
+      "PRICE": "Price",
+      "AVAILABILITY": "Availability",
+      "ORDER": "Order",
+      "ASCENDING": "Ascending",
+      "DESCENDING": "Descending",
+      "SEARCH": "Search"
+    }
   }
 }

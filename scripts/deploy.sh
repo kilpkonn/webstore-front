@@ -35,9 +35,6 @@ export BIPurple='\033[1;95m'     # Purple
 export BICyan='\033[1;96m'       # Cyan
 export BIWhite='\033[1;97m'      # White
 
-echo -e "${BICyan}Copying placeholder.jpg to ~/images...${IRed}"
-sudo cp images/placeholder.jpg ~/images
-
 echo -e "${BICyan}Pulling image ${Blue}"
 docker pull "$CI_REGISTRY_USER"/"$CI_REGISTRY_REPOSITORY":"$CI_COMMIT_SHORT_SHA"
 

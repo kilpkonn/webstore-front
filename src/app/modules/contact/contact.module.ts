@@ -5,6 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContactRoutingModule } from './contact-routing.module';
 import { ContactComponent } from './components/contact.component';
 import { MapComponent } from './components/map/map.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { MapComponent } from './components/map/map.component';
     CommonModule,
     ContactRoutingModule,
     FlexLayoutModule,
+    TranslateModule,
   ],
   providers: []
 })

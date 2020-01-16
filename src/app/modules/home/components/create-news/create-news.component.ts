@@ -29,13 +29,19 @@ export class CreateNewsComponent implements OnInit {
   }
 
   save() {
-    this.imageService.uploadImage(this.imageFile.files[0])
-      .subscribe(data => {
-        this.news.imageUrl = data.url;
-        this.newsService.createNews(this.news)
-          .subscribe(news => console.log(news), err => console.log(err));
-        this.news = new News();
-      }, error => console.log(error));
+    if (typeof this.imageFile === 'undefined') {
+      this.newsService.createNews(this.news)
+        .subscribe(news => console.log(news), err => console.log(err));
+      this.news = new News();
+    } else {
+      this.imageService.uploadImage(this.imageFile.files[0])
+        .subscribe(data => {
+          this.news.imageUrl = data.url;
+          this.newsService.createNews(this.news)
+            .subscribe(news => console.log(news), err => console.log(err));
+          this.news = new News();
+        }, error => console.log(error));
+    }
   }
 
   onSubmit() {
@@ -52,7 +58,7 @@ export class CreateNewsComponent implements OnInit {
       && news.headline !== ''
       && typeof news.content !== 'undefined'
       && news.content !== ''
-      && (this.imageFile.files.length === 0
+      && (typeof this.imageFile === 'undefined'
         || (this.imageFile.files.length === 1
           && this.imageFile.files[0].size <= this.maxFileSize));
   }

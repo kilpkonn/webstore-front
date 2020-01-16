@@ -36,13 +36,20 @@ export class NewProductComponent implements OnInit {
 
 
   save() {
-    this.imageService.uploadImage(this.imageFile.files[0])
-      .subscribe(data => {
-        this.product.imageUrl = data.url;
-        this.productService.createProduct(this.product)
-          .subscribe(product => console.log(product), err => console.log(err));
-        this.product = new Product();
-      }, error => console.log(error));
+    if (typeof this.imageFile === 'undefined') {
+      this.product.imageUrl = 'placeholder.jpg';
+      this.productService.createProduct(this.product)
+        .subscribe(product => console.log(product), err => console.log(err));
+      this.product = new Product();
+    } else {
+      this.imageService.uploadImage(this.imageFile.files[0])
+        .subscribe(data => {
+          this.product.imageUrl = data.url;
+          this.productService.createProduct(this.product)
+            .subscribe(product => console.log(product), err => console.log(err));
+          this.product = new Product();
+        }, error => console.log(error));
+    }
   }
 
   onSubmit() {
@@ -59,7 +66,7 @@ export class NewProductComponent implements OnInit {
       && this.categories.indexOf(product.category) >= 0
       && product.amount > 0
       && product.price > 0
-      && (this.imageFile.files.length === 0
+      && (typeof this.imageFile === 'undefined'
         || (this.imageFile.files.length === 1
           && this.imageFile.files[0].size <= this.maxFileSize));
   }
