@@ -1,31 +1,31 @@
 <div>
   <form [formGroup]="filterForm" (ngSubmit)="onSubmit()" fxLayout="row" fxLayout.lt-md="column">
     <mat-form-field>
-    <mat-label>Category</mat-label>
+    <mat-label>{{'PRODUCTS.SEARCH_BAR.CATEGORY' | translate}}</mat-label>
       <mat-select formControlName="category">
-        <mat-option value="">All</mat-option>
+        <mat-option value="">{{'PRODUCTS.SEARCH_BAR.ALL' | translate}}</mat-option>
         <mat-option *ngFor="let cat of categories" value="{{cat.name}}">{{cat.name | titlecase}}</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Search by name</mat-label>
+      <mat-label>{{'PRODUCTS.SEARCH_BAR.BY_NAME' | translate}}</mat-label>
       <input matInput type="text" formControlName="name">
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Sort</mat-label>
+      <mat-label>{{'PRODUCTS.SEARCH_BAR.SORT' | translate}}</mat-label>
       <mat-select formControlName="sort">
-        <mat-option value="">Name</mat-option>
-        <mat-option value="price">Price</mat-option>
-        <mat-option value="stock">Availability</mat-option>
+        <mat-option value="">{{'PRODUCTS.SEARCH_BAR.NAME' | translate}}</mat-option>
+        <mat-option value="price">{{'PRODUCTS.SEARCH_BAR.PRICE' | translate}}</mat-option>
+        <mat-option value="stock">{{'PRODUCTS.SEARCH_BAR.AVAILABILITY' | translate}}</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Order</mat-label>
+      <mat-label>{{'PRODUCTS.SEARCH_BAR.ORDER' | translate}}</mat-label>
       <mat-select formControlName="order">
-        <mat-option value="">Ascending</mat-option>
-        <mat-option value="reverse">Descending</mat-option>
+        <mat-option value="">{{'PRODUCTS.SEARCH_BAR.ASCENDING' | translate}}</mat-option>
+        <mat-option value="reverse">{{'PRODUCTS.SEARCH_BAR.DESCENDING' | translate}}</mat-option>
       </mat-select>
     </mat-form-field>
-    <button mat-button type="submit" [disabled]="!filterForm.valid">Search</button>
+    <button mat-button type="submit" [disabled]="!filterForm.valid">{{'PRODUCTS.SEARCH_BAR.SEARCH' | translate}}</button>
   </form>
 </div>

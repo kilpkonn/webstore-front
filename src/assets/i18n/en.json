@@ -70,6 +70,19 @@
       "SUBMIT": "Submit",
       "MESSAGE_SUCCESS": "You submitted successfully!",
       "NEW": "New product"
+    },
+    "SEARCH_BAR": {
+      "CATEGORY": "Category",
+      "ALL": "All",
+      "BY_NAME": "Search by name",
+      "SORT": "Sort",
+      "NAME": "Name",
+      "PRICE": "Price",
+      "AVAILABILITY": "Availability",
+      "ORDER": "Order",
+      "ASCENDING": "Ascending",
+      "DESCENDING": "Descending",
+      "SEARCH": "Search"
     }
   }
 }

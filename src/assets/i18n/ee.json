@@ -70,6 +70,19 @@
       "SUBMIT": "Salvesta",
       "MESSAGE_SUCCESS": "Toode edukalt lisatud!",
       "NEW": "Lisa toode"
+    },
+    "SEARCH_BAR": {
+      "CATEGORY": "Kategooria",
+      "ALL": "Kõik",
+      "BY_NAME": "Otsi nime järgi",
+      "SORT": "Sorteeri",
+      "NAME": "Nime järgi",
+      "PRICE": "Hinna järgi",
+      "AVAILABILITY": "Saadavuse järgi",
+      "ORDER": "Järjesta",
+      "ASCENDING": "Kasvavalt",
+      "DESCENDING": "Kahanevalt",
+      "SEARCH": "Otsi"
     }
   }
 }
