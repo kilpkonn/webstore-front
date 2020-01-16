@@ -13,6 +13,7 @@ import { NewProductComponent } from './components/new-product/new-product.compon
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { SharedModule } from "../../shared/shared.module";
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SharedModule } from "../../shared/shared.module";
     AppMaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    TranslateModule
   ]
 })
 export class ProductsModule { }

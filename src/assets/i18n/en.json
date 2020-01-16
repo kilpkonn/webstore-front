@@ -48,5 +48,28 @@
       "MESSAGE_SUCCESS": "News created successfully!",
       "CREATE_MORE": "Create more"
     }
+  },
+  "PRODUCTS": {
+    "ADD_PRODUCT": {
+      "NEW": "New"
+    },
+    "DETAIL": {
+      "CATEGORY": "Category: {{category}}",
+      "PRICE": "Price: {{price}}€",
+      "STOCK": "Stock: {{stock}}",
+      "BACK": "Back"
+    },
+    "NEW_PRODUCT": {
+      "TITLE": "Create new product",
+      "NAME": "Name",
+      "CATEGORY": "Category",
+      "IMAGE": "Image",
+      "AMOUNT": "Amount",
+      "PRICE": "Price (€)",
+      "DESCRIPTION": "Description",
+      "SUBMIT": "Submit",
+      "MESSAGE_SUCCESS": "You submitted successfully!",
+      "NEW": "New product"
+    }
   }
 }
