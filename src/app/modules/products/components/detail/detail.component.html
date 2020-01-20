@@ -15,7 +15,7 @@
       </div>
       <div fxFlex="30" fxLayout="row">
         <div fxFlex="50">
-          {{'PRODUCTS.DETAIL.PRICE' | translate: {price: product.price} }}
+          {{'PRODUCTS.DETAIL.PRICE' | translate: {priceLow: product.priceLow, priceHigh: product.priceHigh} }}
         </div>
         <div fxFlex="50">
           {{'PRODUCTS.DETAIL.STOCK' | translate: {stock: product.amount} }}

@@ -55,7 +55,7 @@
     },
     "DETAIL": {
       "CATEGORY": "Kategooria: {{category}}",
-      "PRICE": "Hind: {{price}}€",
+      "PRICE": "Hind: {{priceLow}}€ - {{priceHigh}}€",
       "STOCK": "Kogus: {{stock}}",
       "BACK": "Tagasi"
     },
@@ -65,7 +65,9 @@
       "CATEGORY": "Kategooria",
       "IMAGE": "Pilt",
       "AMOUNT": "Kogus",
-      "PRICE": "Hind (€)",
+      "PRICE": "Hinna vahemik",
+      "PRICE_LOW": "Alates(€)",
+      "PRICE_HIGH": "Kuni(€)",
       "DESCRIPTION": "Kirjeldus",
       "SUBMIT": "Salvesta",
       "MESSAGE_SUCCESS": "Toode edukalt lisatud!",
