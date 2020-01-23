@@ -1,5 +1,5 @@
 <mat-card [routerLink]="['/products', product.id]">
   <mat-card-title>{{product.name}}</mat-card-title>
   <mat-card-content><img mat-card-image [attr.src]="'images/' + product.imageUrl" alt="Product Image"></mat-card-content>
-  <mat-card-footer>{{'PRODUCTS.DETAIL.PRICE' | translate: {price: product.price} }}</mat-card-footer>
+  <mat-card-footer>{{'PRODUCTS.DETAIL.PRICE' | translate: {priceLow: product.priceLow, priceHigh: product.priceHigh} }}</mat-card-footer>
 </mat-card>

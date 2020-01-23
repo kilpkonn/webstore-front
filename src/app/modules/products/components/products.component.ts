@@ -24,7 +24,7 @@ export class ProductsComponent implements OnInit {
     if (sort === undefined || sort === '') {
       value = a.name < b.name ? -1 : 1;
     } else if (sort === 'price') {
-      value = a.price - b.price;
+      value = a.priceLow - b.priceLow;  // TODO: Sort by avg price
     } else if (sort === 'stock') {
       value = a.amount - b.amount;
     }
@@ -58,7 +58,7 @@ export class ProductsComponent implements OnInit {
   }
 
   trackElement(index: number, element: any) {
-    return element ? element.id : null
+    return element ? element.id : null;
   }
 
 }

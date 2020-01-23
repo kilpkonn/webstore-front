@@ -6,6 +6,7 @@ export class Product {
   imageUrl: string;
   description: string;
   category: Category;
-  price: number;
+  priceLow: number;
+  priceHigh: number;
   amount: number;
 }

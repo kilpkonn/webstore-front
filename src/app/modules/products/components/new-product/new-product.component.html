@@ -29,10 +29,22 @@
             <input matNativeControl type="number" id="amount" required [(ngModel)]="product.amount" name="amount">
           </mat-form-field>
 
-          <mat-form-field>
-            <mat-label>{{'PRODUCTS.NEW_PRODUCT.PRICE' | translate}}</mat-label>
-            <input matNativeControl type="number" id="price" required [(ngModel)]="product.price" name="amount">
-          </mat-form-field>
+        </div>
+        <div fxLayout="column">
+          <div fxLayout="row">
+            <h4 fxFlexOffset="2">{{'PRODUCTS.NEW_PRODUCT.PRICE' | translate}}</h4>
+          </div>
+          <div fxLayout="row" fxLayout.lt-lg="column">
+            <mat-form-field>
+              <mat-label>{{'PRODUCTS.NEW_PRODUCT.PRICE_LOW' | translate}}</mat-label>
+              <input matNativeControl type="number" id="priceLow" required [(ngModel)]="product.priceLow" name="priceLow">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>{{'PRODUCTS.NEW_PRODUCT.PRICE_HIGH' | translate}}</mat-label>
+              <input matNativeControl type="number" id="priceHigh" required [(ngModel)]="product.priceHigh" name="priceHigh">
+            </mat-form-field>
+          </div>
         </div>
 
         <mat-form-field>
@@ -49,7 +61,8 @@
 
     <div [hidden]="!submitted">
       <h4>{{'PRODUCTS.NEW_PRODUCT.MESSAGE_SUCCESS' | translate}}</h4>
-      <button mat-raised-button (click)="newProduct(); newProductForm.reset()">{{'PRODUCTS.NEW_PRODUCT.NEW' | translate}}</button>
+      <button mat-raised-button
+              (click)="newProduct(); newProductForm.reset()">{{'PRODUCTS.NEW_PRODUCT.NEW' | translate}}</button>
     </div>
   </div>
   <div fxFlex="15" fxFlex.lt-md="5"></div>

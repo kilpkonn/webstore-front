@@ -3,7 +3,7 @@
   "DELETE": "Delete",
   "HEADER": {
     "HOME": "Home",
-    "PRODUCTS": "Products",
+    "PRODUCTS": "Plants",
     "CONTACT": "Contact",
     "USERS": "Users",
     "LOGOUT": "Logout"
@@ -55,7 +55,7 @@
     },
     "DETAIL": {
       "CATEGORY": "Category: {{category}}",
-      "PRICE": "Price: {{price}}€",
+      "PRICE": "Price: {{priceLow}}€ - {{priceHigh}}€",
       "STOCK": "Stock: {{stock}}",
       "BACK": "Back"
     },
@@ -65,7 +65,9 @@
       "CATEGORY": "Category",
       "IMAGE": "Image",
       "AMOUNT": "Amount",
-      "PRICE": "Price (€)",
+      "PRICE": "Price range",
+      "PRICE_LOW": "Starting at (€)",
+      "PRICE_HIGH": "To (€)",
       "DESCRIPTION": "Description",
       "SUBMIT": "Submit",
       "MESSAGE_SUCCESS": "You submitted successfully!",
