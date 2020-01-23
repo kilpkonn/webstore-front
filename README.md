@@ -1,4 +1,5 @@
-# iti0203-2019-project (team 06)
+# webstore-front
+_Originally created in ITI0203 course (2019)_
 
 [![pipeline status](https://gitlab.com/kilpkonn/webstore-front/badges/master/pipeline.svg)](https://gitlab.com/kilpkonn/webstore-front/commits/master)
 ## Description
