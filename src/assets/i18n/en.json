@@ -6,7 +6,8 @@
     "PRODUCTS": "Plants",
     "CONTACT": "Contact",
     "USERS": "Users",
-    "LOGOUT": "Logout"
+    "LOGOUT": "Logout",
+    "LOGIN": "Login"
   },
   "ADMIN": {
     "USERNAME": "Username",

@@ -5,7 +5,7 @@
   },
 
   "/images": {
-    "target": "http://ec2-13-53-135-244.eu-north-1.compute.amazonaws.com",
+    "target": "taimetuba.ee",
     "secure": false
   }
 }

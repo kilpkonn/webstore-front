@@ -6,7 +6,8 @@
     "PRODUCTS": "Taimed",
     "CONTACT": "Kontakt",
     "USERS": "Kasutajad",
-    "LOGOUT": "Logi välja"
+    "LOGOUT": "Logi välja",
+    "LOGIN": "Logi sisse"
   },
   "ADMIN": {
     "USERNAME": "Kasutaja nimi",
