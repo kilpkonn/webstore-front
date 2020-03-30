@@ -3,7 +3,8 @@ import {UserService} from '../services/user.service';
 import {User} from '../../../shared/models/user';
 import {AuthenticationService} from '../../../shared/services/authentication.service';
 import {ConfirmationDialogComponent} from '../../../shared/components/confirmation-dialog/confirmation-dialog.component';
-import {MatDialog, MatDialogRef, MatTableDataSource} from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-user',
