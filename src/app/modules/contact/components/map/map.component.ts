@@ -8,6 +8,7 @@ import OlPoint from 'ol/geom/Point';
 import OlFeature from 'ol/Feature';
 import OlVectorSource from 'ol/source/Vector';
 import OlVectorLayer from 'ol/layer/Vector';
+import {Icon, Style} from 'ol/style';
 
 import { fromLonLat } from 'ol/proj';
 
@@ -23,6 +24,7 @@ export class MapComponent implements OnInit, AfterViewInit {
   layer: OlTileLayer;
   view: OlView;
 
+  iconStyle: Style;
   marker: OlFeature;
   vectorSource: OlVectorSource;
   vectorLayer: OlVectorLayer;
@@ -43,11 +45,21 @@ export class MapComponent implements OnInit, AfterViewInit {
 
     /* Feature and vector */
 
-    // TODO: fancy marker
     this.marker = new OlFeature({
       // Added fromLonLat
       geometry: new OlPoint(fromLonLat(this.markerLocation)),
     });
+
+    this.iconStyle = new Style({
+      image: new Icon({
+        anchor: [0.5, 1],
+        anchorXUnits: 'fraction',
+        anchorYUnits: 'fraction',
+        src: './assets/location_marker.svg'
+      })
+    });
+
+    this.marker.setStyle(this.iconStyle);
 
 
     this.vectorSource = new OlVectorSource({

@@ -22,3 +22,9 @@ mat-card-footer {
   bottom: 0;
   right: 0;
 }
+
+mat-card-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
