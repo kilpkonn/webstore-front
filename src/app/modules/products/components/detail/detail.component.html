@@ -10,8 +10,7 @@
       <img mat-card-image [attr.src]="'images/' + product.imageUrl" alt="Product Image">
     </div>
     <div fxFlex="50" fxLayout="column">
-      <div fxFlexOffset="10" fxFlex="60">
-        {{product.description}}
+      <div fxFlexOffset="10" fxFlex="60" [innerHTML]="product.description | marked">
       </div>
       <div fxFlex="30" fxLayout="row">
         <div fxFlex="50">
