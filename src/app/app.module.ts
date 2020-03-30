@@ -50,6 +50,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
   ],
   bootstrap: [AppComponent],
+  exports: [
+  ],
   entryComponents: [
     ConfirmationDialogComponent
   ]
