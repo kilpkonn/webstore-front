@@ -1,11 +1,11 @@
 {
   "/api": {
-    "target": "http://localhost:8080",
+    "target": "https://taimetuba.ee",
     "secure": false
   },
 
   "/images": {
-    "target": "taimetuba.ee",
+    "target": "http://taimetuba.ee",
     "secure": false
   }
 }
