@@ -9,16 +9,24 @@ import { ExtendedModule, FlexModule } from '@angular/flex-layout';
 import { SidenavListComponent } from './layout/sidenav-list/sidenav-list.component';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { MarkedPipe } from './pipe/marked.pipe';
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, DeleteButtonComponent, SidenavListComponent, ConfirmationDialogComponent],
+  declarations: [HeaderComponent,
+    FooterComponent,
+    DeleteButtonComponent,
+    SidenavListComponent,
+    ConfirmationDialogComponent,
+    MarkedPipe
+  ],
   exports: [
     HeaderComponent,
     FooterComponent,
     DeleteButtonComponent,
     SidenavListComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    MarkedPipe
   ],
   imports: [
     CommonModule,
@@ -26,7 +34,7 @@ import { TranslateModule } from '@ngx-translate/core';
     RouterModule,
     FlexModule,
     ExtendedModule,
-    TranslateModule,
+    TranslateModule
   ]
 })
 export class SharedModule {

@@ -21,7 +21,7 @@ import { TranslateModule } from '@ngx-translate/core';
     FlexLayoutModule,
     SharedModule,
     FormsModule,
-    TranslateModule
+    TranslateModule,
   ]
 })
 export class HomeModule { }
