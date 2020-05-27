@@ -1,8 +1,22 @@
 <mat-card *ngIf="product">
   <mat-card-header>
-    <mat-card-title>{{product.name | uppercase}}</mat-card-title>
-    <mat-card-subtitle *ngIf="product.category">{{'PRODUCTS.DETAIL.CATEGORY' | translate: {category: product.category.name} }}</mat-card-subtitle>
-    <mat-card-subtitle *ngIf="!product.category">{{'PRODUCTS.DETAIL.CATEGORY' | translate: {category: 'none'} }}</mat-card-subtitle>
+    <mat-card-title *ngIf="!isEditingMode">
+      {{product.name | uppercase}}
+    </mat-card-title>
+    <mat-card-title *ngIf="isEditingMode">
+      TODO
+    </mat-card-title>
+
+    <mat-card-subtitle *ngIf="product.category && !isEditingMode">
+      {{'PRODUCTS.DETAIL.CATEGORY' | translate: { category: product.category.name } }}
+    </mat-card-subtitle>
+    <mat-card-subtitle *ngIf="!product.category && !isEditingMode">
+      {{'PRODUCTS.DETAIL.CATEGORY' | translate: { category: 'none' } }}
+    </mat-card-subtitle>
+    <mat-card-subtitle *ngIf="isEditingMode">
+      TODO
+    </mat-card-subtitle>
+
   </mat-card-header>
   <mat-card-content fxLayout="row" fxLayout.lt-md="column">
     <mat-divider fxFlexOffset="5" fxFlexOffset.gt-md="0" fxFlex="90" fxFlex.lt-md="0"></mat-divider>
@@ -10,15 +24,26 @@
       <img mat-card-image [attr.src]="'images/' + product.imageUrl" alt="Product Image">
     </div>
     <div fxFlex="50" fxLayout="column">
-      <div fxFlexOffset="10" fxFlex="60" [innerHTML]="product.description | marked">
+      <div fxFlexOffset="10" fxFlex="60" *ngIf="!isEditingMode" [innerHTML]="product.description | marked"></div>
+      <div fxFlexOffset="10" fxFlex="60" *ngIf="isEditingMode">
+        TODO
       </div>
+
       <div fxFlex="30" fxLayout="row">
-        <div fxFlex="50">
-          {{'PRODUCTS.DETAIL.PRICE' | translate: {priceLow: product.priceLow, priceHigh: product.priceHigh} }}
+        <div fxFlex="50" *ngIf="!isEditingMode">
+          {{'PRODUCTS.DETAIL.PRICE' | translate: { priceLow: product.priceLow, priceHigh: product.priceHigh } }}
         </div>
-        <div fxFlex="50">
-          {{'PRODUCTS.DETAIL.STOCK' | translate: {stock: product.amount} }}
+        <div fxFlex="50" *ngIf="isEditingMode">
+          TODO
         </div>
+
+        <div fxFlex="50" *ngIf="!isEditingMode">
+          {{'PRODUCTS.DETAIL.STOCK' | translate: { stock: product.amount } }}
+        </div>
+        <div fxFlex="50" *ngIf="isEditingMode">
+          TODO
+        </div>
+
       </div>
     </div>
   </mat-card-content>
