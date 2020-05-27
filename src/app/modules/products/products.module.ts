@@ -12,7 +12,7 @@ import { ListingComponent } from './components/listing/listing.component';
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { DetailComponent } from './components/detail/detail.component';
-import { SharedModule } from "../../shared/shared.module";
+import { SharedModule } from '../../shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
 
 

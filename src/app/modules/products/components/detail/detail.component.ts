@@ -33,6 +33,14 @@ export class DetailComponent implements OnInit {
     });
   }
 
+  updateProduct() {
+    this.isEditingMode = false;
+  }
+
+  editProduct() {
+    this.isEditingMode = true;
+  }
+
   ngOnInit() {
     this.getProduct();
   }

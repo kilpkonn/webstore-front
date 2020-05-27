@@ -31,14 +31,14 @@
 
       <div fxFlex="30" fxLayout="row">
         <div fxFlex="50" *ngIf="!isEditingMode">
-          {{'PRODUCTS.DETAIL.PRICE' | translate: { priceLow: product.priceLow, priceHigh: product.priceHigh } }}
+          {{ 'PRODUCTS.DETAIL.PRICE' | translate: { priceLow: product.priceLow, priceHigh: product.priceHigh } }}
         </div>
         <div fxFlex="50" *ngIf="isEditingMode">
           TODO
         </div>
 
         <div fxFlex="50" *ngIf="!isEditingMode">
-          {{'PRODUCTS.DETAIL.STOCK' | translate: { stock: product.amount } }}
+          {{ 'PRODUCTS.DETAIL.STOCK' | translate: { stock: product.amount } }}
         </div>
         <div fxFlex="50" *ngIf="isEditingMode">
           TODO
@@ -49,6 +49,14 @@
   </mat-card-content>
   <mat-card-actions>
     <mat-divider fxFlexOffset="5" fxFlex="90"></mat-divider>
-    <a mat-button [routerLink]="'/products'">{{'PRODUCTS.DETAIL.BACK' | translate}}</a>
+    <a mat-button [routerLink]="'/products'">{{ 'PRODUCTS.DETAIL.BACK' | translate }}</a>
+
+    <button mat-button *ngIf="!isEditingMode && user && user.role == 'ADMIN'" (click)="editProduct()">
+      {{ 'PRODUCTS.DETAIL.EDIT' | translate }}
+    </button>
+    <button mat-button *ngIf="isEditingMode" (click)="updateProduct()">
+      {{ 'PRODUCTS.DETAIL.SAVE' | translate }}
+    </button>
+
   </mat-card-actions>
 </mat-card>

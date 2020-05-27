@@ -58,7 +58,9 @@
       "CATEGORY": "Kategooria: {{category}}",
       "PRICE": "Hind: {{priceLow}}€ - {{priceHigh}}€",
       "STOCK": "Kogus: {{stock}}",
-      "BACK": "Tagasi"
+      "BACK": "Tagasi",
+      "EDIT": "Muuda",
+      "SAVE": "Save"
     },
     "NEW_PRODUCT": {
       "TITLE": "Lisa toode",
