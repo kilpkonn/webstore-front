@@ -12,8 +12,8 @@ import { ImageService } from '../../services/image.service';
   styleUrls: ['./new-product.component.css']
 })
 export class NewProductComponent implements OnInit {
-  public submitted: boolean;
-  public product = new Product();
+  submitted: boolean;
+  product = new Product();
   categories: Category[];
 
   readonly maxFileSize = 104857600; // 100 MB
@@ -26,7 +26,7 @@ export class NewProductComponent implements OnInit {
 
   ngOnInit() {
     this.categoryService.getCategories()
-      .subscribe(categories => this.categories = categories);
+      .subscribe((categories) => this.categories = categories);
   }
 
   newProduct(): void {
@@ -39,14 +39,14 @@ export class NewProductComponent implements OnInit {
     if (typeof this.imageFile === 'undefined') {
       this.product.imageUrl = 'placeholder.jpg';
       this.productService.createProduct(this.product)
-        .subscribe(product => console.log(product), err => console.log(err));
+        .subscribe((product) => console.log(product), (err) => console.log(err));
       this.product = new Product();
     } else {
       this.imageService.uploadImage(this.imageFile.files[0])
-        .subscribe(data => {
+        .subscribe((data) => {
           this.product.imageUrl = data.url;
           this.productService.createProduct(this.product)
-            .subscribe(product => console.log(product), err => console.log(err));
+            .subscribe((product) => console.log(product), (err) => console.log(err));
           this.product = new Product();
         }, error => console.log(error));
     }

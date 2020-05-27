@@ -4,7 +4,10 @@
       {{product.name | uppercase}}
     </mat-card-title>
     <mat-card-title *ngIf="isEditingMode">
-      TODO
+      <mat-form-field>
+        <mat-label>{{'PRODUCTS.NEW_PRODUCT.NAME' | translate}}</mat-label>
+        <input matNativeControl type="text" id="name" [required] [(ngModel)]="product.name" name="name">
+      </mat-form-field>
     </mat-card-title>
 
     <mat-card-subtitle *ngIf="product.category && !isEditingMode">
@@ -14,7 +17,12 @@
       {{'PRODUCTS.DETAIL.CATEGORY' | translate: { category: 'none' } }}
     </mat-card-subtitle>
     <mat-card-subtitle *ngIf="isEditingMode">
-      TODO
+      <mat-form-field>
+        <mat-label>{{'PRODUCTS.NEW_PRODUCT.CATEGORY' | translate}}</mat-label>
+        <mat-select id="category" required [(ngModel)]="product.category" name="category">
+          <mat-option *ngFor="let category of categories" [value]="category">{{category.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
     </mat-card-subtitle>
 
   </mat-card-header>
