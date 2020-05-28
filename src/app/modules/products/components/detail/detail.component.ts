@@ -38,6 +38,14 @@ export class DetailComponent implements OnInit {
   }
 
   updateProduct() {
+    if (!this.isValidProduct(this.product)) {
+      // TODO: Show error?
+      console.log(this.categories.indexOf(this.product.category) >= 0)
+      console.log(this.product)
+      return;
+    }
+    this.productService.updateProduct(this.product.id, this.product)
+      .subscribe((product) => this.product = product);
     this.isEditingMode = false;
   }
 
@@ -47,8 +55,24 @@ export class DetailComponent implements OnInit {
       .subscribe((categories) => this.categories = categories);
   }
 
+  categoryCompare(o1: Category, o2: Category) {
+    return o1.id === o2.id;
+  }
+
+  getDescriptionRowsCount(desc: string) {
+    return Math.max(desc.split('\n').length, 10);
+  }
+
   ngOnInit() {
     this.getProduct();
+  }
+
+  private isValidProduct(product: Product) {
+    return typeof product.name !== 'undefined'
+      && this.categories.filter((cat) => cat.id === product.category.id).length > 0
+      && product.amount > 0
+      && product.priceLow > 0
+      && product.priceHigh >= product.priceLow;
   }
 
 }

@@ -66,7 +66,7 @@ export class NewProductComponent implements OnInit {
       && this.categories.indexOf(product.category) >= 0
       && product.amount > 0
       && product.priceLow > 0
-      && product.priceHigh > product.priceLow
+      && product.priceHigh >= product.priceLow
       && (typeof this.imageFile === 'undefined'
         || (this.imageFile.files.length === 1
           && this.imageFile.files[0].size <= this.maxFileSize));
