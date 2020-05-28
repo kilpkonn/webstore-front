@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../../../shared/models/product';
-import {Params} from '@angular/router';
+import { Params } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +10,15 @@ import {Params} from '@angular/router';
 export class ProductService {
   private url = 'api/products';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.url);
   }
 
   getProductById(id: number): Observable<Product> {
-    return this.http.get<Product>(`${this.url}/${id}`);
+    return this.http.get<Product>(`${ this.url }/${ id }`);
   }
 
   getFilteredProducts(params: Params) {
@@ -37,25 +38,28 @@ export class ProductService {
     return this.http.get<Product[]>(this.url, {params: prms});
   }
 
-  getImage(id: number): Observable<Blob> {
-    return this.http.get(`${this.url}/${id}/image`, {responseType: 'blob'});
-  }
+  /*
+   getImage(id: number): Observable<Blob> {
+   return this.http.get(`${this.url}/${id}/image`, {responseType: 'blob'});
+   }
+   */
 
   getSearchedProducts(name: string): Observable<Product[]> {
     return this.http.get<Product[]>(this.url, {
-      params: new HttpParams().set('name', name)});
+      params: new HttpParams().set('name', name)
+    });
   }
 
   createProduct(product: Product): Observable<Product> {
     return this.http.post<Product>(this.url, product);
   }
 
-  updateProduct(id: number, value: any): Observable<any> {
-    return this.http.put(`${this.url}/${id}`, value);
+  updateProduct(id: number, value: any): Observable<Product> {
+    return this.http.put<Product>(`${ this.url }/${ id }`, value);
   }
 
   deleteProduct(id: number): Observable<any> {
-    return this.http.delete(`${this.url}/${id}`);  // TODO: maybe handle response
+    return this.http.delete(`${ this.url }/${ id }`);  // TODO: maybe handle response
   }
 }
 

@@ -9,9 +9,10 @@ mat-card-header, mat-card-actions {
   margin-left: 1.6em;
 }
 
-mat-card-actions a {
+mat-card-actions a, mat-card-actions button {
   margin-top: 0.5em;
 }
+
 
 img, img.mat-card-image {
   display: block;
@@ -25,7 +26,6 @@ img, img.mat-card-image {
 div {
   margin: 0.5em;
 }
-
 @media only screen and (max-width: 600px) {
   mat-card {
     width: 80%;

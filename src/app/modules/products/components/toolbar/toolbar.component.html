@@ -9,7 +9,7 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>{{'PRODUCTS.SEARCH_BAR.BY_NAME' | translate}}</mat-label>
-      <input matInput type="text" formControlName="name">
+      <input matInput type="text" formControlName="name" (input)="onSubmit()">
     </mat-form-field>
     <mat-form-field>
       <mat-label>{{'PRODUCTS.SEARCH_BAR.SORT' | translate}}</mat-label>
@@ -26,6 +26,6 @@
         <mat-option value="reverse">{{'PRODUCTS.SEARCH_BAR.DESCENDING' | translate}}</mat-option>
       </mat-select>
     </mat-form-field>
-    <button mat-button type="submit" [disabled]="!filterForm.valid">{{'PRODUCTS.SEARCH_BAR.SEARCH' | translate}}</button>
+    <!--<button mat-button type="submit" [disabled]="!filterForm.valid">{{'PRODUCTS.SEARCH_BAR.SEARCH' | translate}}</button>-->
   </form>
 </div>

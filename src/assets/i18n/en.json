@@ -58,7 +58,9 @@
       "CATEGORY": "Category: {{category}}",
       "PRICE": "Price: {{priceLow}}€ - {{priceHigh}}€",
       "STOCK": "Stock: {{stock}}",
-      "BACK": "Back"
+      "BACK": "Back",
+      "EDIT": "Edit",
+      "SAVE": "Save"
     },
     "NEW_PRODUCT": {
       "TITLE": "Create new product",

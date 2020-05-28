@@ -1,8 +1,30 @@
 <mat-card *ngIf="product">
   <mat-card-header>
-    <mat-card-title>{{product.name | uppercase}}</mat-card-title>
-    <mat-card-subtitle *ngIf="product.category">{{'PRODUCTS.DETAIL.CATEGORY' | translate: {category: product.category.name} }}</mat-card-subtitle>
-    <mat-card-subtitle *ngIf="!product.category">{{'PRODUCTS.DETAIL.CATEGORY' | translate: {category: 'none'} }}</mat-card-subtitle>
+    <mat-card-title *ngIf="!isEditingMode">
+      {{product.name | uppercase}}
+    </mat-card-title>
+    <mat-card-title *ngIf="isEditingMode">
+      <mat-form-field>
+        <mat-label>{{'PRODUCTS.NEW_PRODUCT.NAME' | translate}}</mat-label>
+        <input matNativeControl type="text" id="name" [required] [(ngModel)]="product.name" name="name">
+      </mat-form-field>
+    </mat-card-title>
+
+    <mat-card-subtitle *ngIf="product.category && !isEditingMode">
+      {{'PRODUCTS.DETAIL.CATEGORY' | translate: { category: product.category.name } }}
+    </mat-card-subtitle>
+    <mat-card-subtitle *ngIf="!product.category && !isEditingMode">
+      {{'PRODUCTS.DETAIL.CATEGORY' | translate: { category: 'none' } }}
+    </mat-card-subtitle>
+    <mat-card-subtitle *ngIf="isEditingMode">
+      <mat-form-field>
+        <mat-label>{{'PRODUCTS.NEW_PRODUCT.CATEGORY' | translate}}</mat-label>
+        <mat-select id="category" required [(value)]="product.category" [compareWith]="categoryCompare">
+          <mat-option *ngFor="let category of categories" [value]="category">{{category.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-subtitle>
+
   </mat-card-header>
   <mat-card-content fxLayout="row" fxLayout.lt-md="column">
     <mat-divider fxFlexOffset="5" fxFlexOffset.gt-md="0" fxFlex="90" fxFlex.lt-md="0"></mat-divider>
@@ -10,20 +32,58 @@
       <img mat-card-image [attr.src]="'images/' + product.imageUrl" alt="Product Image">
     </div>
     <div fxFlex="50" fxLayout="column">
-      <div fxFlexOffset="10" fxFlex="60" [innerHTML]="product.description | marked">
+      <div fxFlexOffset="10" fxFlex="60" *ngIf="!isEditingMode" [innerHTML]="product.description | marked"></div>
+      <div fxFlexOffset="10" fxFlex="60" *ngIf="isEditingMode">
+        <mat-form-field fxFlex>
+          <mat-label>{{'PRODUCTS.NEW_PRODUCT.DESCRIPTION' | translate}}</mat-label>
+          <textarea matNativeControl type="text" id="description"
+                    required [(ngModel)]="product.description"
+                    [rows]="getDescriptionRowsCount(product.description)"
+                    name="description">
+
+          </textarea>
+        </mat-form-field>
       </div>
+
       <div fxFlex="30" fxLayout="row">
-        <div fxFlex="50">
-          {{'PRODUCTS.DETAIL.PRICE' | translate: {priceLow: product.priceLow, priceHigh: product.priceHigh} }}
+        <div fxFlex="50" *ngIf="!isEditingMode">
+          {{ 'PRODUCTS.DETAIL.PRICE' | translate: { priceLow: product.priceLow, priceHigh: product.priceHigh } }}
         </div>
-        <div fxFlex="50">
-          {{'PRODUCTS.DETAIL.STOCK' | translate: {stock: product.amount} }}
+        <div fxFlex="50" *ngIf="isEditingMode">
+          <mat-form-field>
+            <mat-label>{{'PRODUCTS.NEW_PRODUCT.PRICE_LOW' | translate}}</mat-label>
+            <input matNativeControl type="number" id="priceLow" required [(ngModel)]="product.priceLow" name="priceLow">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>{{'PRODUCTS.NEW_PRODUCT.PRICE_HIGH' | translate}}</mat-label>
+            <input matNativeControl type="number" id="priceHigh" required [(ngModel)]="product.priceHigh" name="priceHigh">
+          </mat-form-field>
         </div>
+
+        <div fxFlex="50" *ngIf="!isEditingMode">
+          {{ 'PRODUCTS.DETAIL.STOCK' | translate: { stock: product.amount } }}
+        </div>
+        <div fxFlex="50" *ngIf="isEditingMode">
+          <mat-form-field>
+            <mat-label>{{'PRODUCTS.NEW_PRODUCT.AMOUNT' | translate}}</mat-label>
+            <input matNativeControl type="number" id="amount" required [(ngModel)]="product.amount" name="amount">
+          </mat-form-field>
+        </div>
+
       </div>
     </div>
   </mat-card-content>
   <mat-card-actions>
     <mat-divider fxFlexOffset="5" fxFlex="90"></mat-divider>
-    <a mat-button [routerLink]="'/products'">{{'PRODUCTS.DETAIL.BACK' | translate}}</a>
+    <a mat-button [routerLink]="'/products'">{{ 'PRODUCTS.DETAIL.BACK' | translate }}</a>
+
+    <button mat-button *ngIf="!isEditingMode && user && user.role == 'ADMIN'" (click)="editProduct()">
+      {{ 'PRODUCTS.DETAIL.EDIT' | translate }}
+    </button>
+    <button mat-button *ngIf="isEditingMode" (click)="updateProduct()">
+      {{ 'PRODUCTS.DETAIL.SAVE' | translate }}
+    </button>
+
   </mat-card-actions>
 </mat-card>

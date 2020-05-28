@@ -1,8 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {UserService} from '../services/user.service';
-import {User} from '../../../shared/models/user';
-import {AuthenticationService} from '../../../shared/services/authentication.service';
-import {ConfirmationDialogComponent} from '../../../shared/components/confirmation-dialog/confirmation-dialog.component';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { User } from '../../../shared/models/user';
+import { AuthenticationService } from '../../../shared/services/authentication.service';
+import { ConfirmationDialogComponent } from '../../../shared/components/confirmation-dialog/confirmation-dialog.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -18,8 +18,10 @@ export class UserComponent implements OnInit {
   dialogRef: MatDialogRef<ConfirmationDialogComponent>;
   dataSource = new MatTableDataSource(this.users);
 
-  constructor(private userService: UserService, private dialog: MatDialog,
-              private authenticationService: AuthenticationService) {
+  constructor(private userService: UserService,
+              private dialog: MatDialog,
+              private authenticationService: AuthenticationService
+  ) {
     this.user = authenticationService.currentUserValue;
     authenticationService.getUser.subscribe(user => this.user = user);
   }
@@ -43,7 +45,7 @@ export class UserComponent implements OnInit {
     this.dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       disableClose: false
     });
-    this.dialogRef.componentInstance.confirmMessage = `Are you sure you want to delete user "${user.username}" ?`;
+    this.dialogRef.componentInstance.confirmMessage = `Are you sure you want to delete user "${ user.username }" ?`;
 
     this.dialogRef.afterClosed().subscribe(result => {
       if (result) {
