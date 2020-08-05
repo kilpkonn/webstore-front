@@ -15,11 +15,9 @@ h1 a {
   color: #d3d3d3;
 }
 
-.header {
-  background-color: #414444;
-  color: #efefef;
-  padding-left: 1em;
-  padding-right: 1em;
+img {
+  max-height: 2.2em;
+  max-width: 100%;
 }
 
 button {
@@ -31,6 +29,13 @@ button {
   mat-toolbar{
     border-radius: 0;
   }
+}
+
+.header {
+background-color: #414444;
+color: #efefef;
+padding-left: 1em;
+padding-right: 1em;
 }
 
 .mat-raised-button {
