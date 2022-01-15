@@ -24,7 +24,7 @@
     "@angular/router": "^9.1.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
-    "marked": "^0.8.2",
+    "marked": "^4.0.10",
     "ngx-material-file-input": "^2.1.1",
     "ol": "^6.2.1",
     "rxjs": "~6.5.4",
